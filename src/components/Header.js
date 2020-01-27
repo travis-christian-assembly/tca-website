@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import MobileMenu from './MobileMenu'
+import MobileMenu from 'components/MobileMenu'
 
 const timeoutLength = 300
 

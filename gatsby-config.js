@@ -1,4 +1,5 @@
 const config = require('./config');
+const path = require('path')
 
 module.exports = {
   siteMetadata: {
@@ -63,7 +64,16 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-root-import',
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        root: path.join(__dirname, '.'),
+        assets: path.join(__dirname, 'src/assets'),
+        components: path.join(__dirname, 'src/components'),
+        images: path.join(__dirname, 'src/images'),
+        pages: path.join(__dirname, 'src/pages')
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

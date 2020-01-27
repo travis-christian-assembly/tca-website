@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
+import Layout from 'components/layout'
 
-import pic07 from '../assets/images/pic07.jpg'
-import pic06 from '../assets/images/pic06.jpg'
+import pic07 from 'assets/images/pic07.jpg'
+import pic06 from 'assets/images/pic06.jpg'
 
 const LeftSidebar = props => (
   <Layout>

@@ -1,5 +1,5 @@
 import React from 'react'
-import pic01 from '../assets/images/pic01.jpg'
+import pic01 from 'assets/images/pic01.jpg'
 import { Link as ScrollLink } from 'react-scroll'
 
 const Banner = props => (

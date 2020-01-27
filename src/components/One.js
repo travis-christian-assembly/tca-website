@@ -1,5 +1,5 @@
 import React from 'react'
-import pic02 from '../assets/images/pic02.jpg'
+import pic02 from 'assets/images/pic02.jpg'
 import { Link as ScrollLink } from 'react-scroll'
 import Fade from 'react-reveal/Fade'
 
