@@ -31,7 +31,7 @@ const Elements = props => (
             <i>italic</i> and this is <em>emphasized</em>. This is{' '}
             <sup>superscript</sup> text and this is <sub>subscript</sub> text.
             This is <u>underlined</u> and this is code: <code>for (;;) </code>.
-            Finally, <a href="#">this is a link</a>.
+            Finally, <a href="/#">this is a link</a>.
           </p>
 
           <hr />
@@ -118,64 +118,64 @@ const Elements = props => (
               <h4>Icons</h4>
               <ul className="icons">
                 <li>
-                  <a href="#" className="icon brands fa-twitter">
+                  <a href="/#" className="icon brands fa-twitter">
                     <span className="label">Twitter</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands fa-facebook-f">
+                  <a href="/#" className="icon brands fa-facebook-f">
                     <span className="label">Facebook</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands fa-instagram">
+                  <a href="/#" className="icon brands fa-instagram">
                     <span className="label">Instagram</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands fa-github">
+                  <a href="/#" className="icon brands fa-github">
                     <span className="label">Github</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands fa-dribbble">
+                  <a href="/#" className="icon brands fa-dribbble">
                     <span className="label">Dribbble</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands fa-tumblr">
+                  <a href="/#" className="icon brands fa-tumblr">
                     <span className="label">Tumblr</span>
                   </a>
                 </li>
               </ul>
               <ul className="icons">
                 <li>
-                  <a href="#" className="icon brands alt fa-twitter">
+                  <a href="/#" className="icon brands alt fa-twitter">
                     <span className="label">Twitter</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands alt fa-facebook-f">
+                  <a href="/#" className="icon brands alt fa-facebook-f">
                     <span className="label">Facebook</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands alt fa-instagram">
+                  <a href="/#" className="icon brands alt fa-instagram">
                     <span className="label">Instagram</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands alt fa-github">
+                  <a href="/#" className="icon brands alt fa-github">
                     <span className="label">Github</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands alt fa-dribbble">
+                  <a href="/#" className="icon brands alt fa-dribbble">
                     <span className="label">Dribbble</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="icon brands alt fa-tumblr">
+                  <a href="/#" className="icon brands alt fa-tumblr">
                     <span className="label">Tumblr</span>
                   </a>
                 </li>
@@ -186,24 +186,24 @@ const Elements = props => (
           <h4>Actions</h4>
           <ul className="actions">
             <li>
-              <a href="#" className="button primary">
+              <a href="/#" className="button primary">
                 Default
               </a>
             </li>
             <li>
-              <a href="#" className="button">
+              <a href="/#" className="button">
                 Default
               </a>
             </li>
           </ul>
           <ul className="actions small">
             <li>
-              <a href="#" className="button primary small">
+              <a href="/#" className="button primary small">
                 Small
               </a>
             </li>
             <li>
-              <a href="#" className="button small">
+              <a href="/#" className="button small">
                 Small
               </a>
             </li>
@@ -212,40 +212,12 @@ const Elements = props => (
             <div className="col-3 col-6-medium col-12-xsmall">
               <ul className="actions stacked">
                 <li>
-                  <a href="#" className="button primary">
+                  <a href="/#" className="button primary">
                     Default
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="button">
-                    Default
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-3 col-6-medium col-12-xsmall">
-              <ul className="actions stacked">
-                <li>
-                  <a href="#" className="button primary small">
-                    Small
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="button small">
-                    Small
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-3 col-6-medium col-12-xsmall">
-              <ul className="actions stacked">
-                <li>
-                  <a href="#" className="button primary fit">
-                    Default
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="button fit">
+                  <a href="/#" className="button">
                     Default
                   </a>
                 </li>
@@ -254,12 +226,40 @@ const Elements = props => (
             <div className="col-3 col-6-medium col-12-xsmall">
               <ul className="actions stacked">
                 <li>
-                  <a href="#" className="button primary small fit">
+                  <a href="/#" className="button primary small">
                     Small
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="button small fit">
+                  <a href="/#" className="button small">
+                    Small
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-3 col-6-medium col-12-xsmall">
+              <ul className="actions stacked">
+                <li>
+                  <a href="/#" className="button primary fit">
+                    Default
+                  </a>
+                </li>
+                <li>
+                  <a href="/#" className="button fit">
+                    Default
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-3 col-6-medium col-12-xsmall">
+              <ul className="actions stacked">
+                <li>
+                  <a href="/#" className="button primary small fit">
+                    Small
+                  </a>
+                </li>
+                <li>
+                  <a href="/#" className="button small fit">
                     Small
                   </a>
                 </li>
@@ -366,29 +366,29 @@ const Elements = props => (
           <h3>Buttons</h3>
           <ul className="actions">
             <li>
-              <a href="#" className="button primary">
+              <a href="/#" className="button primary">
                 Primary
               </a>
             </li>
             <li>
-              <a href="#" className="button">
+              <a href="/#" className="button">
                 Default
               </a>
             </li>
           </ul>
           <ul className="actions">
             <li>
-              <a href="#" className="button primary large">
+              <a href="/#" className="button primary large">
                 Large
               </a>
             </li>
             <li>
-              <a href="#" className="button">
+              <a href="/#" className="button">
                 Default
               </a>
             </li>
             <li>
-              <a href="#" className="button small">
+              <a href="/#" className="button small">
                 Default
               </a>
             </li>
@@ -397,12 +397,12 @@ const Elements = props => (
             <div className="col-6 col-12-xsmall">
               <ul className="actions fit">
                 <li>
-                  <a href="#" className="button primary fit">
+                  <a href="/#" className="button primary fit">
                     Fit
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="button fit">
+                  <a href="/#" className="button fit">
                     Fit
                   </a>
                 </li>
@@ -411,12 +411,12 @@ const Elements = props => (
             <div className="col-6 col-12-xsmall">
               <ul className="actions fit small">
                 <li>
-                  <a href="#" className="button primary fit small">
+                  <a href="/#" className="button primary fit small">
                     Fit + Small
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="button fit small">
+                  <a href="/#" className="button fit small">
                     Fit + Small
                   </a>
                 </li>
@@ -425,12 +425,12 @@ const Elements = props => (
           </div>
           <ul className="actions">
             <li>
-              <a href="#" className="button primary icon solid fa-download">
+              <a href="/#" className="button primary icon solid fa-download">
                 Icon
               </a>
             </li>
             <li>
-              <a href="#" className="button icon solid fa-download">
+              <a href="/#" className="button icon solid fa-download">
                 Icon
               </a>
             </li>

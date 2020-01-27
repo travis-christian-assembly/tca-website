@@ -1,13 +1,14 @@
+const config = require('./config');
+
 module.exports = {
-  //pathPrefix: `/mygatsby`,
   siteMetadata: {
-    title: 'Landed',
-    author: 'vasrush',
-    description: 'A Gatsby.js V2 Starter based on Landed by HTML5 UP',
+    title: config.siteTitle,
+    author: config.siteAuthor,
+    description: 'Travis Christian Assembly',
     menuLinks: [
       {
         name: 'Home',
-        link: '/',
+        link: '/'
       },
       {
         name: 'Layouts',
@@ -15,15 +16,15 @@ module.exports = {
         items: [
           {
             name: 'Left Sidebar',
-            link: '/left-sidebar',
+            link: '/left-sidebar'
           },
           {
             name: 'Right Sidebar',
-            link: '/right-sidebar',
+            link: '/right-sidebar'
           },
           {
             name: 'No Sidebar',
-            link: '/no-sidebar',
+            link: '/no-sidebar'
           },
           {
             name: 'SubMenu',
@@ -31,37 +32,38 @@ module.exports = {
             items: [
               {
                 name: 'Option 1',
-                link: '#',
+                link: '#'
               },
               {
                 name: 'Option 2',
-                link: '#',
+                link: '#'
               },
               {
                 name: 'Option 3',
-                link: '#',
+                link: '#'
               },
               {
                 name: 'Option 4',
-                link: '#',
-              },
-            ],
-          },
-        ],
+                link: '#'
+              }
+            ]
+          }
+        ]
       },
       {
         name: 'Elements',
-        link: '/elements',
+        link: '/elements'
       },
       {
         name: 'Sign Up',
         link: '#',
-        cl: 'button primary',
-      },
-    ],
+        cl: 'button primary'
+      }
+    ]
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-root-import',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -71,15 +73,15 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/assets/images/website-icon.png', // This path is relative to the root of the site.
-      },
+        icon: 'src/assets/images/website-icon.png'
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/images/`,
-        name: 'images',
-      },
+        name: 'images'
+      }
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -87,9 +89,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
-        lang: 'en',
-      },
+        lang: 'en'
+      }
     },
-    'gatsby-plugin-offline',
-  ],
+    'gatsby-plugin-offline'
+  ]
 }

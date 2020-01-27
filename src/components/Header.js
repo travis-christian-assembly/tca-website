@@ -95,7 +95,7 @@ class Header extends React.Component {
       <React.Fragment>
         <div className={`navbar-menu ${this.state.mobileActiveClass}`}>
           <div id="titleBar">
-            <a
+            <a // eslint-disable-line
               role="button"
               onClick={() => this.toggleHamburger()}
               className="toggle"
@@ -130,6 +130,7 @@ class Header extends React.Component {
                           {link.name}
                         </Link>
                         <ul
+                          role='presentation'
                           style={
                             open
                               ? {
@@ -167,6 +168,7 @@ class Header extends React.Component {
                                     {sublink.name}
                                   </Link>
                                   <ul
+                                    role='presentation'
                                     style={
                                       subOpen
                                         ? {

@@ -24,7 +24,7 @@ const LeftSidebar = props => (
         <div className="row gtr-150">
           <div className="col-8 col-12-medium">
             <section id="content">
-              <a href="#" className="image fit">
+              <a href="/#" className="image fit">
                 <img src={pic06} alt="" />
               </a>
               <h3>Dolore Amet Consequat</h3>
@@ -75,7 +75,7 @@ const LeftSidebar = props => (
                 <footer>
                   <ul className="actions">
                     <li>
-                      <a href="#" className="button">
+                      <a href="/#" className="button">
                         Learn More
                       </a>
                     </li>
@@ -84,7 +84,7 @@ const LeftSidebar = props => (
               </section>
               <hr />
               <section>
-                <a href="#" className="image fit">
+                <a href="/#" className="image fit">
                   <img src={pic07} alt="" />
                 </a>
                 <h3>Amet Lorem Tempus</h3>
@@ -97,7 +97,7 @@ const LeftSidebar = props => (
                 <footer>
                   <ul className="actions">
                     <li>
-                      <a href="#" className="button">
+                      <a href="/#" className="button">
                         Learn More
                       </a>
                     </li>

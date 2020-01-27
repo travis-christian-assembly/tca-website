@@ -2000,11 +2000,9 @@
 
 				.toggle {
 					@include icon(false, solid);
-					height: 60px;
 					left: 0;
 					position: absolute;
 					top: 0;
-					width: 90px;
 					outline: 0;
 					border: 0;
 
@@ -2070,7 +2068,7 @@
 				}
 			}
 
-			body .navPanel-visible {	
+			body .navPanel-visible {
 				/*	#page-wrapper {
 						@include vendor('transform', 'translateX(#{_size(navPanel)})');
 					}*/
