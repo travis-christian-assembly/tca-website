@@ -86,6 +86,7 @@ module.exports = {
         icon: 'src/assets/images/website-icon.png'
       }
     },
+    'gatsby-plugin-netlify-cms',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
