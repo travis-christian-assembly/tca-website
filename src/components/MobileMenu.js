@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import UrlAwareLink from 'components/UrlAwareLink'
 
 const MobileMenu = props => (
   <nav>
@@ -47,9 +48,7 @@ const MobileMenu = props => (
         </React.Fragment>
       ) : (
         <div key={link.name}>
-          <Link className="link depth-0" to={link.link}>
-            {link.name}
-          </Link>
+          <UrlAwareLink className="link depth-0" link={link}/>
         </div>
       )
     )}

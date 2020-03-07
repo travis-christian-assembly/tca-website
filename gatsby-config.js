@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: config.siteTitle,
     author: config.siteAuthor,
-    description: 'Travis Christian Assembly',
+    description: config.siteDescription,
     menuLinks: [
       {
         name: 'Home',
@@ -56,8 +56,8 @@ module.exports = {
         link: '/elements'
       },
       {
-        name: 'Sign Up',
-        link: '#',
+        name: 'Live Stream',
+        link: 'https://www.youtube.com/channel/UC3Qa1Q7VrghRxxeavIdF1gw/live',
         cl: 'button primary'
       }
     ]

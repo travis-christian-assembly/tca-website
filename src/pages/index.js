@@ -7,17 +7,17 @@ import Two from 'components/Two'
 import Three from 'components/Three'
 import Four from 'components/Four'
 import Five from 'components/Five'
+import config from 'root/config'
 
 class Home extends React.Component {
   render() {
     return (
-      <Layout location="/">
+      <Layout location='/'>
         <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          title="Gatsby Starter - Landed"
+          htmlAttributes={{ lang: 'zh-Hans' }}
+          title={config.siteTitle}
           meta={[
-            { name: 'description', content: 'Landed Gatsby Starter' },
-            { name: 'keywords', content: 'sample, something' }
+            { name: 'description', content: config.siteDescription }
           ]}
         ></Helmet>
         <Banner />

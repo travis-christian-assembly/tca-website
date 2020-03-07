@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import MobileMenu from 'components/MobileMenu'
+import UrlAwareLink from 'components/UrlAwareLink'
 
 const timeoutLength = 300
 
@@ -227,9 +228,7 @@ class Header extends React.Component {
                     </React.Fragment>
                   ) : (
                     <li key={link.name}>
-                      <Link className={link.cl} to={link.link}>
-                        {link.name}
-                      </Link>
+                      <UrlAwareLink className={link.cl} link={link}/>
                     </li>
                   )
                 )}

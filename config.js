@@ -1,5 +1,6 @@
 module.exports = {
-  siteTitle: 'Travis Christian Assembly',
+  siteTitle: '传福基督徒聚会',
   siteAuthor: 'Travis Christian Assembly',
-  siteUrl: 'https://tcaweb.org'
+  siteUrl: 'https://tcaweb.org',
+  siteDescription: '传福基督徒聚会'
 }
