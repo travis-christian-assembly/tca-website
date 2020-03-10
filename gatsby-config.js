@@ -12,42 +12,32 @@ module.exports = {
         link: '/'
       },
       {
-        name: '布局',
-        link: '#',
+        name: '影音资料',
+        link: '/media',
         items: [
           {
-            name: 'Left Sidebar',
-            link: '/left-sidebar'
+            name: '主日信息',
+            link: '/media/sermons'
           },
           {
-            name: 'Right Sidebar',
-            link: '/right-sidebar'
+            name: '主日学',
+            link: '/media/1'
           },
           {
-            name: 'No Sidebar',
-            link: '/no-sidebar'
+            name: '福音专题',
+            link: '/media/2'
           },
           {
-            name: 'SubMenu',
-            link: '#',
-            items: [
-              {
-                name: 'Option 1',
-                link: '#'
-              },
-              {
-                name: 'Option 2',
-                link: '#'
-              },
-              {
-                name: 'Option 3',
-                link: '#'
-              },
-              {
-                name: 'Option 4',
-                link: '#'
-              }
-            ]
+            name: '特会专题',
+            link: '/media/3'
+          },
+          {
+            name: '青少年聚会',
+            link: '/media/4'
+          },
+          {
+            name: '美南秋令会',
+            link: '/media/5'
           }
         ]
       },
@@ -90,10 +80,18 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/images/`,
-        name: 'images'
+        name: 'images',
+        path: `${__dirname}/src/images/`
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'sermons',
+        path: `${__dirname}/sermons/`
+      }
+    },
+    'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
