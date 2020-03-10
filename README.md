@@ -30,7 +30,7 @@
   * To update a certain dependency
     * Run command: `npm install <DEPENDENCY_NAME>@latest --save`
     * e.g. `npm install gatsby@latest --save`
-  * To update all dependencies
+  * To update all dependencies to the `wanted` versions
     * Run command: `npm update --save/--save-dev`
   * Reproduce the version lock of this package's dependency closure after any dependency upgrade
     * Run command: `npm shrinkwrap --dev`

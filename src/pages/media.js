@@ -21,8 +21,6 @@ const Media = ({
         <title>影音资料</title>
       </Helmet>
 
-      { console.log(sermons) }
-
       <div id="main" className="wrapper style1">
         <div className="container">
           <header className="major">
