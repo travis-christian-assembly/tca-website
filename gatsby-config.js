@@ -8,11 +8,11 @@ module.exports = {
     description: config.siteDescription,
     menuLinks: [
       {
-        name: 'Home',
+        name: '主页',
         link: '/'
       },
       {
-        name: 'Layouts',
+        name: '布局',
         link: '#',
         items: [
           {
@@ -52,11 +52,11 @@ module.exports = {
         ]
       },
       {
-        name: 'Elements',
+        name: '元素',
         link: '/elements'
       },
       {
-        name: 'Live Stream',
+        name: '直播',
         link: 'https://www.youtube.com/channel/UC3Qa1Q7VrghRxxeavIdF1gw/live',
         cl: 'button primary'
       }

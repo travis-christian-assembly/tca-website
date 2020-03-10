@@ -2,11 +2,8 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Layout from 'components/layout'
 import Banner from 'components/Banner'
-import One from 'components/One'
-import Two from 'components/Two'
-import Three from 'components/Three'
-import Four from 'components/Four'
-import Five from 'components/Five'
+import About from 'components/About'
+import Schedule from 'components/Schedule'
 import config from 'root/config'
 
 class Home extends React.Component {
@@ -20,12 +17,9 @@ class Home extends React.Component {
             { name: 'description', content: config.siteDescription }
           ]}
         ></Helmet>
-        <Banner />
-        <One />
-        <Two />
-        <Three />
-        <Four />
-        <Five />
+        <Banner/>
+        <About/>
+        <Schedule/>
       </Layout>
     )
   }

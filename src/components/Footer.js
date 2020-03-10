@@ -14,18 +14,8 @@ const Footer = props => (
         </a>
       </li>
       <li>
-        <a href="/" className="icon brands alt fa-linkedin-in">
-          <span className="label">LinkedIn</span>
-        </a>
-      </li>
-      <li>
         <a href="/" className="icon brands alt fa-instagram">
           <span className="label">Instagram</span>
-        </a>
-      </li>
-      <li>
-        <a href="/" className="icon brands alt fa-github">
-          <span className="label">GitHub</span>
         </a>
       </li>
       <li>
@@ -35,12 +25,9 @@ const Footer = props => (
       </li>
     </ul>
     <ul className="copyright">
-      <li>&copy; Untitled. All rights reserved.</li>
+      <li>&copy; Travis Christian Assembly. All rights reserved.</li>
       <li>
         Design: <a href="http://html5up.net">HTML5 UP</a>
-      </li>
-      <li>
-        Demo Images: <a href="https://unsplash.com">Unsplash</a>
       </li>
     </ul>
   </footer>
