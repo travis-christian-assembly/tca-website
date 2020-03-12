@@ -136,7 +136,7 @@ class Header extends React.Component {
                             open
                               ? {
                                   display: `block`,
-                                  background: `rgba(39, 40, 51, 0.965)`,
+                                  background: `rgba(255, 255, 255, 0.965)`,
                                   position: `absolute`,
                                   right: `55%`,
                                   minWidth: `150px`,
@@ -174,7 +174,7 @@ class Header extends React.Component {
                                       subOpen
                                         ? {
                                             display: `block`,
-                                            background: `rgba(39, 40, 51, 0.965)`,
+                                            background: `rgba(255, 255, 255, 0.965)`,
                                             borderRadius: `5px`,
                                             position: `absolute`,
                                             right: `100%`,

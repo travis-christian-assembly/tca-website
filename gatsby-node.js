@@ -13,6 +13,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             id
             frontmatter {
               id
+              title
             }
           }
         }
@@ -28,7 +29,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const pagePath = `media/sermons/${node.frontmatter.id}`
-    console.log(`Creating page at: ${pagePath}`);
+    console.log(`Creating page for sermon '${node.frontmatter.title}' at: ${pagePath}`);
 
     createPage(
       {
