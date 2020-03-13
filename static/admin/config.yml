@@ -2,15 +2,24 @@ backend:
   name: github
   repo: travis-christian-assembly/tca-website
 
-media_folder: static/assets
-public_folder: /assets
-
 collections:
-  - name: sermon
+  - name: sermons
     label: Sermon
     folder: media/sermons
     create: true
     fields:
-      - { name: date, label: 'Sermon Date', widget: date }
+      - { name: date, label: 'Sermon Date', widget: datetime, dateFormat: 'MM/DD/YYYY', timeFormat: '', format: L }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+  - name: sunday_school
+    label: 'Sunday School'
+    folder: media/sunday_school
+    create: true
+    fields:
+      - { name: date, label: 'Sunday School Date', widget: datetime, dateFormat: 'MM/DD/YYYY', timeFormat: '', format: L }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+
+locale: 'en'
+media_folder: static/assets
+public_folder: /assets
