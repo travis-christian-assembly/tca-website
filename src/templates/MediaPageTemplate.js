@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
 
-export default function SermonTemplate({ data }) {
+export default function MediaTemplate({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
 
@@ -32,12 +32,12 @@ export default function SermonTemplate({ data }) {
 export const query = graphql`
   query($id: String!) {
     markdownRemark(frontmatter: {id: {eq: $id}}) {
-      html
       frontmatter {
-        title
         date(formatString: "MM/DD/YYYY")
+        title
         type
       }
+      html
     }
   }
 `

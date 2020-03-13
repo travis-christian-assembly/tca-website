@@ -2,21 +2,21 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import MediaIndexTemplate from 'components/MediaIndexTemplate'
 
-const MediaIndex = ({
+const MediaSermonsIndex = ({
   data: {
     allMarkdownRemark: { edges }
   }
 }) => {
   return (
-    <MediaIndexTemplate edges={edges} />
+    <MediaIndexTemplate category='主日信息' edges={edges} />
   )
 }
 
-export default MediaIndex
+export default MediaSermonsIndex
 
 export const sermonQuery = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {type: {eq: "media"}}}) {
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "media"}, categories: {in: "主日信息"}}}) {
       edges {
         node {
           frontmatter {

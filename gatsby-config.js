@@ -21,23 +21,19 @@ module.exports = {
           },
           {
             name: '主日学',
-            link: '/media/1'
+            link: '/media/sunday-school'
           },
           {
             name: '福音专题',
-            link: '/media/2'
+            link: '/media/gospel'
           },
           {
             name: '特会专题',
-            link: '/media/3'
-          },
-          {
-            name: '青少年聚会',
-            link: '/media/4'
+            link: '/media/conference'
           },
           {
             name: '美南秋令会',
-            link: '/media/5'
+            link: '/media/southern-us-fall-retreat'
           }
         ]
       },
@@ -87,8 +83,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'sermons',
-        path: `${__dirname}/sermons/`
+        name: 'media',
+        path: `${__dirname}/media/`
       }
     },
     'gatsby-transformer-remark',

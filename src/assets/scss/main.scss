@@ -152,7 +152,6 @@
 
 	a {
 		@include vendor('transition', ('border-color #{_duration(transition)} ease-in-out', 'color #{_duration(transition)} ease-in-out'));
-		border-bottom: dotted 1px;
 		color: _palette(accent1);
 		text-decoration: none;
 
@@ -1463,7 +1462,7 @@
 	}
 
 	#header {
-		background: _palette(accent2-transparent);
+		background: _palette(bg);
 		box-shadow: 0 0 0.25em 0 rgba(0,0,0,0.25);
 		cursor: default;
 		height: 3.5em;

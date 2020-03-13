@@ -3,8 +3,6 @@ const path = require('path')
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const sermonTemplate = path.resolve('src/templates/SermonTemplate.js')
-
   const result = await graphql(`
     {
       allMarkdownRemark {
@@ -13,6 +11,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             id
             frontmatter {
               id
+              type
               title
             }
           }
@@ -28,17 +27,35 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const pagePath = `media/sermons/${node.frontmatter.id}`
-    console.log(`Creating page for sermon '${node.frontmatter.title}' at: ${pagePath}`);
+    var pagePath
+
+    switch (node.frontmatter.type) {
+      case 'media':
+        pagePath = `${node.frontmatter.type}/${node.frontmatter.id}`
+        break;
+      default:
+        throw `Unrecognized Markdown node type: ${node.frontmatter.type}`
+    }
+
+    console.log(`Creating '${node.frontmatter.type}' page for '${node.frontmatter.title}' at: ${pagePath}`)
 
     createPage(
       {
         path: pagePath,
-        component: sermonTemplate,
+        component: getTemplateByType(node.frontmatter.type),
         context: {
           id: node.frontmatter.id
         }
       }
     )
   })
+}
+
+function getTemplateByType(type) {
+  switch (type) {
+    case 'media':
+      return path.resolve('src/templates/MediaPageTemplate.js')
+    default:
+      throw `Unrecognized template type: ${type}`
+  }
 }

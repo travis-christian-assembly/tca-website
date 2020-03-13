@@ -11,7 +11,8 @@ export default class SlideShow extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1
-    };
+    }
+
     return (
       <div>
         <Slider {...settings}>
@@ -23,6 +24,6 @@ export default class SlideShow extends Component {
           </div>
         </Slider>
       </div>
-    );
+    )
   }
 }
