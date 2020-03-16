@@ -55,6 +55,7 @@ module.exports = {
       options: {
         root: path.join(__dirname, '.'),
         assets: path.join(__dirname, 'src/assets'),
+        cms: path.join(__dirname, 'src/cms'),
         components: path.join(__dirname, 'src/components'),
         images: path.join(__dirname, 'src/images'),
         pages: path.join(__dirname, 'src/pages')
@@ -72,7 +73,12 @@ module.exports = {
         icon: 'src/assets/images/website-icon.png'
       }
     },
-    'gatsby-plugin-netlify-cms',
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/NetlifyCms.js`
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
