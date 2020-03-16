@@ -14,6 +14,11 @@ collections:
         name: title
         label: Title
       -
+        name: type
+        label: Type
+        widget: hidden
+        default: media
+      -
         name: date
         label: "Date"
         widget: datetime

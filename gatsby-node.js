@@ -8,9 +8,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allMarkdownRemark {
         edges {
           node {
-            id
             frontmatter {
-              id
               type
               title
             }
@@ -31,7 +29,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     switch (node.frontmatter.type) {
       case 'media':
-        pagePath = `${node.frontmatter.type}/${node.frontmatter.id}`
+        pagePath = `media/${node.frontmatter.title}`
         break;
       default:
         throw `Unrecognized Markdown node type: ${node.frontmatter.type}`
@@ -44,7 +42,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: pagePath,
         component: getTemplateByType(node.frontmatter.type),
         context: {
-          id: node.frontmatter.id
+          title: node.frontmatter.title
         }
       }
     )

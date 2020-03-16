@@ -32,7 +32,7 @@ export default class MediaIndexTemplate extends React.Component {
                         n => <li key={n.node.id}>
                           [{this.props.category === undefined ? `${getSortedCategories(n.node.frontmatter.categories)} — ` : ''}{n.node.frontmatter.date}]
                           <br/>
-                            <Link to={`media/${n.node.frontmatter.id}`}>
+                            <Link to={`media/${n.node.frontmatter.title}`}>
                               {n.node.frontmatter.title}
                             </Link>
                         </li>

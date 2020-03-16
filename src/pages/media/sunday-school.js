@@ -21,8 +21,7 @@ export const sermonQuery = graphql`
         node {
           frontmatter {
             categories
-            date(formatString: "MM/DD/YYYY")
-            id
+            date
             title
             type
           }
