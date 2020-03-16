@@ -4,81 +4,43 @@ backend:
   repo: travis-christian-assembly/tca-website
 collections:
   -
-    name: media
-    label: Media
-    folder: media
-    slug: "{{year}}_{{month}}_{{day}}-{{title}}"
     create: true
     fields:
       -
-        name: title
         label: Title
+        name: title
       -
-        name: type
-        label: Type
-        widget: hidden
         default: media
+        label: Type
+        name: type
+        widget: hidden
       -
-        name: date
-        label: "Date"
-        widget: datetime
         dateFormat: MM/DD/YYYY
         format: L
+        label: Date
+        name: date
         timeFormat: ""
+        widget: datetime
       -
-        name: categories
-        label: Categories
-        widget: select
         hint: "* Supports multiple selections"
-        multiple: true
+        label: Categories
         min: 1
+        multiple: true
+        name: categories
         options:
           - 主日信息
           - 主日学
-      -
-        name: body
-        label: Body
-        widget: markdown
-  -
-    name: sermons
-    label: Sermon
-    folder: media/sermons
-    create: true
-    fields:
-      -
-        name: date
-        label: "Sermon Date"
-        widget: datetime
-        dateFormat: MM/DD/YYYY
-        format: L
-        timeFormat: ""
-      -
-        name: title
-        label: Title
-      -
-        name: body
-        label: Body
-        widget: markdown
-  -
-    name: sunday_school
-    label: "Sunday School"
-    folder: media/sunday_school
-    create: true
-    fields:
-      -
-        dateFormat: MM/DD/YYYY
-        format: L
-        label: "Sunday School Date"
-        name: date
-        timeFormat: ""
-        widget: datetime
-      -
-        label: Title
-        name: title
+        widget: select
       -
         label: Body
         name: body
         widget: markdown
+    folder: media
+    label: Media
+    name: media
+    slug: "{{year}}_{{month}}_{{day}}-{{title}}"
 locale: en
 media_folder: static/assets
 public_folder: /assets
+slug:
+  sanitize_replacement: _
