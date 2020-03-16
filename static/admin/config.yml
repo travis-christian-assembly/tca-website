@@ -17,7 +17,7 @@ collections:
       -
         dateFormat: MM/DD/YYYY
         format: L
-        label: Date
+        label: "Event Date"
         name: date
         timeFormat: ""
         widget: datetime
@@ -38,7 +38,7 @@ collections:
     folder: media
     label: Media
     name: media
-    slug: "{{year}}_{{month}}_{{day}}-{{title}}"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}_{{title}}"
 locale: en
 media_folder: static/assets
 public_folder: /assets
