@@ -25,7 +25,6 @@ export const sermonQuery = graphql`
             title
             type
           }
-          id
         }
       }
     }

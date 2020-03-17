@@ -5,8 +5,6 @@ import Helmet from 'react-helmet'
 
 export default class MediaIndexTemplate extends React.Component {
   render() {
-    const dateFormat = require('dateformat')
-
     const nodes = this.props.edges
     nodes.sort(
       function(a, b) {
@@ -34,7 +32,7 @@ export default class MediaIndexTemplate extends React.Component {
                         n => <li key={n.node.id}>
                           [{this.props.category === undefined ? `${getSortedCategories(n.node.frontmatter.categories)} — ` : ''}{n.node.frontmatter.date}]
                           <br/>
-                            <Link to={`media/${dateFormat(Date.parse(n.node.frontmatter.date), 'yyyymmdd')}_${n.node.frontmatter.title}`}>
+                            <Link to={`media/${n.node.frontmatter.date}_${n.node.frontmatter.title}`}>
                               {n.node.frontmatter.title}
                             </Link>
                         </li>

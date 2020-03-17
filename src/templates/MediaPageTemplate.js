@@ -30,8 +30,8 @@ export default function MediaTemplate({ data }) {
 }
 
 export const query = graphql`
-  query($title: String!) {
-    markdownRemark(frontmatter: {title: {eq: $title}}) {
+  query ($id: String!) {
+    markdownRemark(id: {eq: $id}) {
       frontmatter {
         date
         title

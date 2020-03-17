@@ -71,9 +71,9 @@ CMS.registerEditorComponent(
           { label: '雅各书', value: '雅' },
           { label: '彼得前书', value: '彼前' },
           { label: '彼得后书', value: '彼後' },
-          { label: '约翰壹书', value: '約壹' },
-          { label: '约翰贰书', value: '約貳' },
-          { label: '约翰参书', value: '約參' },
+          { label: '约翰一书', value: '約壹' },
+          { label: '约翰二书', value: '約貳' },
+          { label: '约翰三书', value: '約參' },
           { label: '犹大书', value: '猶' },
           { label: '启示录', value: '啟' }
         ]

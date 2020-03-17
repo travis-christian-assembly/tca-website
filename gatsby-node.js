@@ -1,4 +1,3 @@
-const dateFormat = require('dateformat')
 const path = require('path')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
@@ -13,6 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               type
               title
             }
+            id
           }
         }
       }
@@ -30,7 +30,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     switch (node.frontmatter.type) {
       case 'media':
-        pagePath = `media/${dateFormat(Date.parse(node.frontmatter.date), 'yyyymmdd')}_${node.frontmatter.title}`
+        pagePath = `media/${node.frontmatter.date}_${node.frontmatter.title}`
         break;
       default:
         throw `Unrecognized Markdown node type: ${node.frontmatter.type}`
@@ -43,7 +43,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: pagePath,
         component: getTemplateByType(node.frontmatter.type),
         context: {
-          title: node.frontmatter.title
+          id: node.id
         }
       }
     )

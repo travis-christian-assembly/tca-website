@@ -16,10 +16,10 @@ collections:
         widget: hidden
       -
         dateFormat: MM/DD/YYYY
-        format: L
+        format: YYYYMMDD
         label: "Event Date"
         name: date
-        timeFormat: ""
+        timeFormat: false
         widget: datetime
       -
         hint: "* Supports multiple selections"
