@@ -9,8 +9,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             frontmatter {
-              type
+              date
               title
+              type
             }
             id
           }

@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 
 export default class MediaIndexTemplate extends React.Component {
   render() {
+    const moment = require('moment')
+
     const nodes = this.props.edges
     nodes.sort(
       function(a, b) {
@@ -30,7 +32,7 @@ export default class MediaIndexTemplate extends React.Component {
                     {
                       nodes.map(
                         n => <li key={n.node.id}>
-                          [{this.props.category === undefined ? `${getSortedCategories(n.node.frontmatter.categories)} — ` : ''}{n.node.frontmatter.date}]
+                          [{this.props.category === undefined ? `${getSortedCategories(n.node.frontmatter.categories)} — ` : ''}{moment(n.node.frontmatter.date, 'YYYYMMDD').format('MM/DD/YYYY')}]
                           <br/>
                             <Link to={`media/${n.node.frontmatter.date}_${n.node.frontmatter.title}`}>
                               {n.node.frontmatter.title}
