@@ -1,15 +1,18 @@
 import { bibleIndex, bibleVerses, nonConsecutiveBibleVersesDisplayText } from 'components/bible'
 import config from 'root/config'
 
-const displayLang = config.bibleVersesDisplayLang
+const _ = require('lodash')
 
-// Book names for the verse quotes are persisted in English names instead of BookId for readability
+const dataLang = config.bibleDataLang
+const displayLang = config.bibleDisplayLang
+const displayVersion = config.bibleDisplayVersion
+
 const bookEngNameToId = {}
-Object.keys(bibleIndex['en']).forEach(
-  id => bookEngNameToId[bibleIndex['en'][id]] = id
+Object.keys(bibleIndex[dataLang]).forEach(
+  id => bookEngNameToId[bibleIndex[dataLang][id]] = id
 )
 
-export default function renderBibleVerses(line) {
+export function renderBibleVerses(line) {
   const match = line.match(/^\$bible_verses book='(.*)', chapter='(.*)', verses='(.*)'\$$/)
   var result = line
 
@@ -26,6 +29,10 @@ export default function renderBibleVerses(line) {
   }
 
   return result
+}
+
+export function renderAll(body) {
+  return _.map(body.split('\n'), renderBibleVerses).join('\n')
 }
 
 function validateAndCalculateVerseIds(verseScope) {
@@ -46,7 +53,7 @@ function validateAndCalculateVerseIds(verseScope) {
       } else if (expression.match(/^[0-9]*$/)) {
         result.push(expression)
       } else {
-        throw new Error(`Unable to handle verse selection expression: '${expression}'. Verse selection expression should look like '\${num}-\${num}' or '\${num}'.`)
+        console.log(`Unable to handle verse selection expression: '${expression}'. Verse selection expression should look like '\${num}-\${num}' or '\${num}'.`)
       }
     }
   )
@@ -63,7 +70,7 @@ function getVersesByIds(bookId, chapter, verseIds) {
       result += `\n>\n> ${nonConsecutiveBibleVersesDisplayText[displayLang]}\n>\n>`
     }
 
-    result += ` <sup>${verseIds[i]}</sup>${bibleVerses[displayLang][bookId][chapter][verseIds[i]]}`
+    result += ` <sup>${verseIds[i]}</sup>${bibleVerses[displayLang][displayVersion][bookId][chapter][verseIds[i]]}`
   }
 
   return result.trim()

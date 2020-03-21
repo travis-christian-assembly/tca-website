@@ -1,6 +1,10 @@
-import React from 'react'
 import BgSchedule from 'assets/images/bg_schedule.jpg'
+import { lang } from 'components/lang'
+import React from 'react'
 import Fade from 'react-reveal/Fade'
+import config from 'root/config'
+
+const language = lang[config.siteDisplayLang]
 
 const Schedule = props => (
   <section
@@ -14,18 +18,18 @@ const Schedule = props => (
     <Fade right big>
       <div className="content">
         <header>
-          <h2>主日聚会时间安排</h2>
+          <h2>{language.sundayScheduleHeader}</h2>
         </header>
         <p>
-          主日掰饼聚会：10:00 ~ 10:20<br/>
-          主日学及小组学习：10:20 ~ 10:50<br/>
-          主日敬拜和信息：11:00 ~ 12:30<br/>
-          爱宴：12:30 ~ 13:30
+          {language.sundayScheduleTextLine1}<br/>
+          {language.sundayScheduleTextLine2}<br/>
+          {language.sundayScheduleTextLine3}<br/>
+          {language.sundayScheduleTextLine4}
         </p>
         <ul className="actions">
           <li>
             <a href="/" className="button">
-              了解更多
+              {language.sundayScheduleTextKnowMore}
             </a>
           </li>
         </ul>

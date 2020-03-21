@@ -1,7 +1,12 @@
 module.exports = {
-  bibleIndex: require('assets/bible/bible_index.json'),
+  bibleIndex: {
+    'en': require('assets/bible/index/en.json'),
+    'zh-Hans': require('assets/bible/index/zh-Hans.json'),
+  },
   bibleVerses: {
-    'zh-Hans': require('assets/bible/bible_verses_ncv_simplified.json')
+    'zh-Hans': {
+      'NCV': require('assets/bible/verses/zh-Hans/ncv/data.json')
+    }
   },
   nonConsecutiveBibleVersesDisplayText: {
     'zh-Hans': '（部分经文省略）'

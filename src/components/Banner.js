@@ -1,15 +1,17 @@
+import { lang } from 'components/lang'
+import Slider from 'components/SlideShow'
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
-import Slider from 'components/SlideShow'
+import config from 'root/config'
+
+const language = lang[config.siteDisplayLang]
 
 const Banner = props => (
   <section id="banner">
     <div className="content">
       <header>
-        <h2>预备基督的新妇，迎接基督的再临</h2>
-        <p>
-          回到起初，回到圣经，回到身体，回到圣灵掌权。
-        </p>
+        <h2>{language.bannerHeader}</h2>
+        <p>{language.bannerText}</p>
       </header>
       <br/>
       <br/>

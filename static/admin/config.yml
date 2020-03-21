@@ -7,13 +7,13 @@ collections:
     create: true
     fields:
       -
-        label: Title
-        name: title
-      -
         default: media
         label: Type
         name: type
         widget: hidden
+      -
+        label: Title
+        name: title
       -
         dateFormat: MM/DD/YYYY
         format: YYYYMMDD
@@ -35,10 +35,30 @@ collections:
         label: Body
         name: body
         widget: markdown
-    folder: media
+    folder: data/media
     label: Media
     name: media
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}_{{title}}"
+  -
+    create: true
+    fields:
+      -
+        default: speaker
+        label: Speaker
+        name: type
+        widget: hidden
+      -
+        label: Name
+        name: name
+        widget: string
+      -
+        label: Title
+        name: title
+        widget: string
+    folder: data/speakers
+    label: Speaker
+    name: speakers
+    slug: "{{title}}_{{name}}"
 locale: en
 media_folder: static/assets
 public_folder: /assets

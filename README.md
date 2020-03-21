@@ -66,3 +66,5 @@
 Netlify is configured to trigger a deployment once a commit is pushed to GitHub.
 
 * Run command: `git push`
+
+### 5. Copyright

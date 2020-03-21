@@ -57,6 +57,7 @@ module.exports = {
         assets: path.join(__dirname, 'src/assets'),
         cms: path.join(__dirname, 'src/cms'),
         components: path.join(__dirname, 'src/components'),
+        data: path.join(__dirname, 'data'),
         images: path.join(__dirname, 'src/images'),
         pages: path.join(__dirname, 'src/pages')
       }
@@ -89,8 +90,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'media',
-        path: `${__dirname}/media/`
+        name: 'data',
+        path: `${__dirname}/data/`
       }
     },
     'gatsby-transformer-remark',

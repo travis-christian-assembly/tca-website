@@ -27,27 +27,35 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    var shouldProcessNode = false
     var pagePath
 
     switch (node.frontmatter.type) {
       case 'media':
         pagePath = `media/${node.frontmatter.date}_${node.frontmatter.title}`
-        break;
+        shouldProcessNode = true
+        break
+      case 'speaker':
+        // Speaker nodes do not have corresponding pages to be created
+        shouldProcessNode = false
+        break
       default:
         throw `Unrecognized Markdown node type: ${node.frontmatter.type}`
     }
 
-    console.log(`Creating '${node.frontmatter.type}' page for '${node.frontmatter.title}' at: ${pagePath}`)
+    if (shouldProcessNode) {
+      console.log(`Creating '${node.frontmatter.type}' page for '${node.frontmatter.title}' with additional context at: ${pagePath}`)
 
-    createPage(
-      {
-        path: pagePath,
-        component: getTemplateByType(node.frontmatter.type),
-        context: {
-          id: node.id
+      createPage(
+        {
+          path: pagePath,
+          component: getTemplateByType(node.frontmatter.type),
+          context: {
+            id: node.id
+          }
         }
-      }
-    )
+      )
+    }
   })
 }
 

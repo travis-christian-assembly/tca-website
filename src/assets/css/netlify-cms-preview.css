@@ -1,0 +1,4 @@
+blockquote {
+  border-left: solid 4px rgba(150, 150, 150, 0.3);
+  padding: 0.5em 0 0.5em 2em;
+}

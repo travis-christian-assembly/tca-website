@@ -1,7 +1,11 @@
-import React from 'react'
 import BgAbout from 'assets/images/bg_about.jpg'
+import { lang } from 'components/lang'
+import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import Fade from 'react-reveal/Fade'
+import config from 'root/config'
+
+const language = lang[config.siteDisplayLang]
 
 const About = props => (
   <section
@@ -18,32 +22,32 @@ const About = props => (
           <div className="row">
             <div className="col-3 col-12-medium">
               <header>
-                <h2>教会介绍</h2>
+                <h2>{language.aboutHeader}</h2>
               </header>
             </div>
             <div className="col-3 col-12-medium">
-              <h3>我们的目标</h3>
+              <h3>{language.aboutSubHeaderGoal}</h3>
               <p>
-                预备基督的新妇，<br/>
-                迎接基督的再临
+                {language.aboutTextGoalLine1}<br/>
+                {language.aboutTextGoalLine2}
               </p>
             </div>
             <div className="col-3 col-12-medium">
-              <h3>我们的道路</h3>
+              <h3>{language.aboutSubHeaderApproach}</h3>
               <p>
-                回到起初<br/>
-                回到圣经<br/>
-                回到身体<br/>
-                回到圣灵掌权
+                {language.aboutTextApproachLine1}<br/>
+                {language.aboutTextApproachLine2}<br/>
+                {language.aboutTextApproachLine3}<br/>
+                {language.aboutTextApproachLine4}
               </p>
             </div>
             <div className="col-3 col-12-medium">
-              <h3>我们的策略</h3>
+              <h3>{language.aboutSubHeaderStrategy}</h3>
               <p>
-                借福音的传扬领人归主<br/>
-                借小组带进全民的事奉<br/>
-                借圣灵的恩膏带进全人的医治，建立基督身体<br/>
-                借宣教得著未得之民
+                {language.aboutTextStrategyLine1}<br/>
+                {language.aboutTextStrategyLine2}<br/>
+                {language.aboutTextStrategyLine3}<br/>
+                {language.aboutTextStrategyLine4}
               </p>
             </div>
           </div>
