@@ -6,47 +6,7 @@ module.exports = {
     title: config.siteTitle,
     author: config.siteAuthor,
     description: config.siteDescription,
-    menuLinks: [
-      {
-        name: '主页',
-        link: '/'
-      },
-      {
-        name: '影音资料',
-        link: '/media',
-        items: [
-          {
-            name: '主日信息',
-            link: '/media/sermons'
-          },
-          {
-            name: '主日学',
-            link: '/media/sunday-school'
-          },
-          {
-            name: '福音专题',
-            link: '/media/gospel'
-          },
-          {
-            name: '特会专题',
-            link: '/media/conference'
-          },
-          {
-            name: '美南秋令会',
-            link: '/media/southern-us-fall-retreat'
-          }
-        ]
-      },
-      {
-        name: '元素',
-        link: '/elements'
-      },
-      {
-        name: '直播',
-        link: 'https://www.youtube.com/channel/UC3Qa1Q7VrghRxxeavIdF1gw/live',
-        cl: 'button primary'
-      }
-    ]
+    menuLinks: config.siteMenuLinks[config.siteDisplayLang]
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -63,7 +23,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'gatsby-starter-default',
         short_name: 'starter',
@@ -77,6 +37,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
+        htmlTitle: config.cmsSiteTitle,
         modulePath: `${__dirname}/src/cms/NetlifyCms.js`
       }
     },

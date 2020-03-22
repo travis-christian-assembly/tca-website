@@ -1,11 +1,15 @@
+import { lang } from 'components/lang'
 import Layout from 'components/layout'
+import media_categories from 'data/media/categories.json'
 import { Link } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
+import config from 'root/config'
 
 export default class MediaIndexTemplate extends React.Component {
   render() {
     const moment = require('moment')
+    const language = lang[config.siteDisplayLang]
 
     const nodes = this.props.edges
     nodes.sort(
@@ -17,13 +21,13 @@ export default class MediaIndexTemplate extends React.Component {
     return (
       <Layout>
         <Helmet>
-          <title>影音资料</title>
+          <title>{language.pageTitleMedia}</title>
         </Helmet>
 
         <div id="main" className="wrapper style1">
           <div className="container">
             <header className="major">
-              <h2>影音资料{this.props.category === undefined ? '' : ` — ${this.props.category}`}</h2>
+              <h2>{language.pageTitleMedia}{this.props.category === undefined ? '' : ` — ${this.props.category}`}</h2>
             </header>
             <div className="row gtr-150">
               <div className="col-8 col-12-medium">
@@ -32,9 +36,9 @@ export default class MediaIndexTemplate extends React.Component {
                     {
                       nodes.map(
                         n => <li key={n.node.id}>
-                          [{this.props.category === undefined ? `${getSortedCategories(n.node.frontmatter.categories)} — ` : ''}{moment(n.node.frontmatter.date, 'YYYYMMDD').format('MM/DD/YYYY')}]
+                          {this.props.category === undefined ? `${getSortedCategories(n.node.frontmatter.categories)} — ` : ''}{moment(n.node.frontmatter.date, 'YYYYMMDD').format('MM/DD/YYYY')}
                           <br/>
-                            <Link to={`media/${n.node.frontmatter.date}_${n.node.frontmatter.title}`}>
+                            <Link to={`/media/${n.node.frontmatter.date}_${n.node.frontmatter.title}`}>
                               {n.node.frontmatter.title}
                             </Link>
                         </li>
@@ -46,14 +50,17 @@ export default class MediaIndexTemplate extends React.Component {
               </div>
               <div className="col-4 col-12-medium">
                 <section id="sidebar">
-                  <h3>分类</h3>
+                  <h3>{language.pageHeaderMediaCategories}</h3>
                   <ul className="alt">
-                    <li>主日信息</li>
-                    <li>主日学</li>
-                    <li>福音专题</li>
-                    <li>特会专题</li>
-                    <li>青少年聚会</li>
-                    <li>美南秋令会</li>
+                    {
+                      media_categories.map(
+                        c => <li key={c.id}>
+                          <Link to={`/media/${c.pageSubPath}`}>
+                            {c.lang[config.siteDisplayLang]}
+                          </Link>
+                        </li>
+                      )
+                    }
                     <li></li>  {/* Render the line separator for the last item in the list*/}
                   </ul>
                 </section>

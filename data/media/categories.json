@@ -1,0 +1,37 @@
+[
+  {
+    "id": "sermons",
+    "lang": {
+      "zh-Hans": "布道"
+    },
+    "pageSubPath": "sermons"
+  },
+  {
+    "id": "sunday_school",
+    "lang": {
+      "zh-Hans": "主日学"
+    },
+    "pageSubPath": "sunday-school"
+  },
+  {
+    "id": "gospel",
+    "lang": {
+      "zh-Hans": "福音"
+    },
+    "pageSubPath": "gospel"
+  },
+  {
+    "id": "conferences",
+    "lang": {
+      "zh-Hans": "特会"
+    },
+    "pageSubPath": "conferences"
+  },
+  {
+    "id": "retreats",
+    "lang": {
+      "zh-Hans": "退休会"
+    },
+    "pageSubPath": "retreats"
+  }
+]

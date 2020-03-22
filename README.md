@@ -1,4 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a55c8f7f-edb7-474b-a634-b3f1abf9ea56/deploy-status)](https://app.netlify.com/sites/dreezys-tech-hive/deploys)
+### 0. About This Project
+This project is a serverless website (written in Gatsby JS) for [our church (Travis Christian Assembly)](http://www.tcaweb.org/), this website contains but not limited to preaching content and church event advertisement.
 
 ### 1. Environment Setup
 * Install [Homebrew](https://docs.brew.sh/Installation)
@@ -68,3 +70,7 @@ Netlify is configured to trigger a deployment once a commit is pushed to GitHub.
 * Run command: `git push`
 
 ### 5. Copyright
+Bible versions used in this project:
+* [Chinese NCV (Simplified)](https://unbound.biola.edu/index.cfm?method=downloads.showDownloadMain)
+
+**Biblical text used in this project is gathered from Biola University, and to our knowledge, is in the Public Domain. If this is in violation of copyrights, please contact us and we will remove it from our project.**

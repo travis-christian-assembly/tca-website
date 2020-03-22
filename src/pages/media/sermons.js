@@ -8,7 +8,7 @@ const MediaSermonsIndex = ({
   }
 }) => {
   return (
-    <MediaIndexTemplate category='主日信息' edges={edges} />
+    <MediaIndexTemplate category='sermons' edges={edges} />
   )
 }
 
@@ -16,7 +16,7 @@ export default MediaSermonsIndex
 
 export const sermonQuery = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {type: {eq: "media"}, categories: {in: "主日信息"}}}) {
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "media"}, categories: {in: "sermons"}}}) {
       edges {
         node {
           frontmatter {
@@ -25,6 +25,7 @@ export const sermonQuery = graphql`
             title
             type
           }
+          id
         }
       }
     }

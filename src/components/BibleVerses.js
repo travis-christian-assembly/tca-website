@@ -25,7 +25,11 @@ export function renderBibleVerses(line) {
     const verseIds = validateAndCalculateVerseIds(verseScope)
     const versesInMarkdown = getVersesByIds(bookEngNameToId[book], chapter, verseIds)
 
-    result = `> <u>${bookChsName} ${chapter}</u>\n>\n> ${versesInMarkdown}\n`
+    if (bookChsName && chapter !== 'undefined') {
+      result = `> <u>${bookChsName} ${chapter}</u>\n>\n> ${versesInMarkdown}\n`
+    } else {
+      result = '> <span style="color:red">**(Please select a Book and a Chapter)**</span>'
+    }
   }
 
   return result
@@ -68,6 +72,10 @@ function getVersesByIds(bookId, chapter, verseIds) {
     // Add indication for non-consecutive verse quotes
     if (i > 0 && verseIds[i] - verseIds[i-1] > 1) {
       result += `\n>\n> ${nonConsecutiveBibleVersesDisplayText[displayLang]}\n>\n>`
+    }
+
+    if (bibleVerses[displayLang][displayVersion][bookId][chapter][verseIds[i]] === undefined) {
+      return `<span style="color:red">**Verse ${verseIds[i]} in Chapter ${chapter} does not exist!**</span>`
     }
 
     result += ` <sup>${verseIds[i]}</sup>${bibleVerses[displayLang][displayVersion][bookId][chapter][verseIds[i]]}`

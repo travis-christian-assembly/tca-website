@@ -1,5 +1,6 @@
 import BgSchedule from 'assets/images/bg_schedule.jpg'
 import { lang } from 'components/lang'
+import UrlAwareLink from 'components/UrlAwareLink'
 import React from 'react'
 import Fade from 'react-reveal/Fade'
 import config from 'root/config'
@@ -26,13 +27,14 @@ const Schedule = props => (
           {language.sundayScheduleTextLine3}<br/>
           {language.sundayScheduleTextLine4}
         </p>
-        <ul className="actions">
-          <li>
-            <a href="/" className="button">
-              {language.sundayScheduleTextKnowMore}
-            </a>
-          </li>
-        </ul>
+        <header>
+          <h2>{language.sundayLocationHeader}</h2>
+        </header>
+        <p>
+          {config.churchName}
+          <br/>
+          <UrlAwareLink className="link depth-0" link={{ name: config.churchAddress, link: config.churchAddressMapLink}}/>
+        </p>
       </div>
     </Fade>
   </section>

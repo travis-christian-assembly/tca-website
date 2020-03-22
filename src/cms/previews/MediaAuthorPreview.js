@@ -4,7 +4,7 @@ import React from 'react'
 const MediaAuthorPreview = ({ entry, fieldsMetaData, widgetFor }) => {
   const showdown = require('showdown')
 
-  const rawMarkdownBody = entry.getIn(['data', 'body'])
+  const rawMarkdownBody = entry.getIn(['data', 'body']) || ''
   const renderedBody = renderAll(rawMarkdownBody)
 
   return (

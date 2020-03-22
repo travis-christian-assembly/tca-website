@@ -1,6 +1,6 @@
+import MediaIndexTemplate from 'components/MediaIndexTemplate'
 import { graphql } from 'gatsby'
 import React from 'react'
-import MediaIndexTemplate from 'components/MediaIndexTemplate'
 
 const MediaIndex = ({
   data: {
@@ -14,7 +14,7 @@ const MediaIndex = ({
 
 export default MediaIndex
 
-export const sermonQuery = graphql`
+export const query = graphql`
   query {
     allMarkdownRemark(filter: {frontmatter: {type: {eq: "media"}}}) {
       edges {

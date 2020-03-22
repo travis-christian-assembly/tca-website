@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'gatsby'
 import UrlAwareLink from 'components/UrlAwareLink'
+import { Link } from 'gatsby'
+import React from 'react'
 
 const MobileMenu = props => (
   <nav>
