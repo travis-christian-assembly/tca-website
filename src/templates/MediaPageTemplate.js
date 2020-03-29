@@ -1,6 +1,7 @@
 import { renderAll } from 'components/BibleVerses'
 import { lang } from 'components/lang'
 import Layout from 'components/layout'
+import speakers from 'data/speakers.json'
 import { graphql } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
@@ -11,15 +12,15 @@ const _ = require('lodash')
 const showdown = require('showdown')
 
 export default function MediaTemplate({ data }) {
-  const { media, speakers } = data
+  const { media } = data
   const { frontmatter, rawMarkdownBody } = media
 
   const speakerMap = {}
-  speakers.edges.forEach(e => speakerMap[e.node.frontmatter['name']] = e.node.frontmatter['title'])
+  speakers.forEach(e => { speakerMap[e.id] = `${e.name}${e.title}` })
 
   var renderedSpeakers = ''
   if (!_.isEmpty(frontmatter.speakers)) {
-    renderedSpeakers = `${language.speakerLinePrefix}${frontmatter.speakers.map(s => `${s}${speakerMap[s]}`).join(language.speakerDelimiter)}`
+    renderedSpeakers = `${language.speakerLinePrefix}${frontmatter.speakers.map(s => speakerMap[s]).join(language.speakerDelimiter)}`
   }
 
   const renderedBody = renderAll(rawMarkdownBody)
@@ -57,16 +58,6 @@ export const query = graphql`
         type
       }
       rawMarkdownBody
-    }
-    speakers: allMarkdownRemark(filter: {frontmatter: {type: {eq: "speaker"}}}) {
-      edges {
-        node {
-          frontmatter {
-            name
-            title
-          }
-        }
-      }
     }
   }
 `

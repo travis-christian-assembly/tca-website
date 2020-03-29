@@ -38,6 +38,7 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         htmlTitle: config.cmsSiteTitle,
+        manualInit: true,
         modulePath: `${__dirname}/src/cms/NetlifyCms.js`
       }
     },

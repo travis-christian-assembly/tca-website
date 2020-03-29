@@ -69,7 +69,20 @@ Netlify is configured to trigger a deployment once a commit is pushed to GitHub.
 
 * Run command: `git push`
 
-### 5. Copyright
+### 5. How to Manage Content
+**Note: Every time you make changes to media categories or speakers, it takes a few minutes for the change to be deployed on Netlify.**
+
+#### 5.1 How to add a new media category
+Edit the JSON file at `/data/media/categories.json`, following the existing entry pattern. Then you will be able to select the newly added media category in CMS.
+
+**NOTES: DO NOT UPDATE OR DELETE ANY EXISTING CATEGORY!**
+
+#### 5.2 How to add a new speaker
+Edit the JSON file at `/data/speakers.json`, following the existing entry pattern. Then you will be able to select the newly added speaker in CMS.
+
+**NOTE: DO NOT UPDATE OR DELETE ANY EXISTING SPEAKER!**
+
+### 6. Copyright
 Bible versions used in this project:
 * [Chinese NCV (Simplified)](https://unbound.biola.edu/index.cfm?method=downloads.showDownloadMain)
 
