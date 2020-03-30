@@ -14,7 +14,7 @@ export const netlifyCmsConfig = {
     slug: { sanitize_replacement: '_' },
     backend: {
       name: 'github',
-      repo: 'travis-christian-assembly/tca-website'
+      repo: config.cmsBackendGitHubRepo
     },
     collections: [
       {

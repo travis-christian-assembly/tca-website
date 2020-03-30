@@ -2,13 +2,13 @@ import { lang } from 'components/lang'
 import Layout from 'components/layout'
 import media_categories from 'data/media/categories.json'
 import { Link } from 'gatsby'
+import Moment from 'moment'
 import React from 'react'
 import Helmet from 'react-helmet'
 import config from 'root/config'
 
 export default class MediaIndexTemplate extends React.Component {
   render() {
-    const moment = require('moment')
     const language = lang[config.siteDisplayLang]
 
     const nodes = this.props.edges
@@ -36,7 +36,7 @@ export default class MediaIndexTemplate extends React.Component {
                     {
                       nodes.map(
                         n => <li key={n.node.id}>
-                          {this.props.category === undefined ? `${getSortedCategories(n.node.frontmatter.categories)} — ` : ''}{moment(n.node.frontmatter.date, 'YYYYMMDD').format('MM/DD/YYYY')}
+                          {this.props.category === undefined ? `${getTranslatedSortedCategories(n.node.frontmatter.categories)} — ` : ''}{Moment(n.node.frontmatter.date, 'YYYYMMDD').format('MM/DD/YYYY')}
                           <br/>
                             <Link to={`/media/${n.node.frontmatter.date}_${n.node.frontmatter.title}`}>
                               {n.node.frontmatter.title}
@@ -73,8 +73,12 @@ export default class MediaIndexTemplate extends React.Component {
   }
 }
 
-function getSortedCategories(categories) {
+function getTranslatedSortedCategories(categories) {
   const copy = categories
   copy.sort()
-  return copy.join('/')
+
+  const categoryIdToTranslation = {}
+  media_categories.forEach(e => categoryIdToTranslation[e.id] = e.lang[config.siteDisplayLang])
+
+  return copy.map(c => categoryIdToTranslation[c]).join(' / ')
 }

@@ -21,12 +21,12 @@ export function renderBibleVerses(line) {
     const chapter = match[2]
     const verseScope = match[3]
 
-    const bookChsName = bibleIndex[displayLang][bookEngNameToId[book]]
-    const verseIds = validateAndCalculateVerseIds(verseScope)
+    const translatedBookName = bibleIndex[displayLang][bookEngNameToId[book]]
+    const verseIds = validateAndCalculateVerseIds(bookEngNameToId[book], chapter, verseScope)
     const versesInMarkdown = getVersesByIds(bookEngNameToId[book], chapter, verseIds)
 
-    if (bookChsName && chapter !== 'undefined') {
-      result = `> <u>${bookChsName} ${chapter}</u>\n>\n> ${versesInMarkdown}\n`
+    if (translatedBookName && chapter !== 'undefined') {
+      result = `> <u>${translatedBookName} ${chapter}</u>\n>\n> ${versesInMarkdown}\n`
     } else {
       result = '> <span style="color:red">**(Please select a Book and a Chapter)**</span>'
     }
@@ -39,17 +39,21 @@ export function renderAll(body) {
   return _.map(body.split('\n'), renderBibleVerses).join('\n')
 }
 
-function validateAndCalculateVerseIds(verseScope) {
+/*
+  'verseScope' supports '0' as the end index for specifying the last verse in the specified book and chapter.
+*/
+function validateAndCalculateVerseIds(bookId, chapter, verseScope) {
   const result = []
 
   verseScope.split(',').forEach(
     e => {
       const expression = e.trim()
-      const multiVersesMatch = expression.match(/^([0-9]*)-([0-9]*)$/)
+      const multiVersesMatch = expression.match(/^([0-9]*)-([0-9]*)$/)  // e.g. '3-22', and '3' will be in group 1 and '22' will be in group 2
 
       if (multiVersesMatch) {
         const start = parseInt(multiVersesMatch[1])
-        const end = parseInt(multiVersesMatch[2])
+        var end = parseInt(multiVersesMatch[2])
+        end = end === 0 ? getIdOfLastVerse(bookId, chapter) : end
 
         for (var i = start; i <= end; i++) {
           result.push(`${i}`)
@@ -65,6 +69,9 @@ function validateAndCalculateVerseIds(verseScope) {
   return result
 }
 
+/*
+  VerseId starts from 1, not 0.
+*/
 function getVersesByIds(bookId, chapter, verseIds) {
   var result = ''
 
@@ -82,4 +89,8 @@ function getVersesByIds(bookId, chapter, verseIds) {
   }
 
   return result.trim()
+}
+
+function getIdOfLastVerse(bookId, chapter) {
+  return Object.keys(bibleVerses[displayLang][displayVersion][bookId][chapter]).length
 }

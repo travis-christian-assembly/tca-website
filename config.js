@@ -35,6 +35,10 @@ module.exports = {
 
   // CMS
   cmsSiteTitle: 'Content Management System - Travis Christian Assembly',
+  cmsBackendGitHubRepo: 'travis-christian-assembly/tca-website',
+
+  // Content
+  dailyBreadContentDomain: 'https://media-daily-bread.netlify.com/',
 
   // Church Info
   churchName: 'Travis Christian Assembly',
