@@ -40,11 +40,13 @@ class DailyBread extends React.Component {
 
       rendered = (
         <div>
-          <h3>{language.dailyBreadHeaderTodaysScripture}</h3>
+          <h3>{language.dailyBreadHeaderAudio}</h3>
           <AudioPlayer
             src={audioUrl}
           />
           <br/>
+          <br/>
+          <h3>{language.dailyBreadHeaderTodaysScripture}</h3>
           <div dangerouslySetInnerHTML={{ __html: new showdown.Converter().makeHtml(markdown) }}/>
         </div>
       )

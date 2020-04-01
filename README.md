@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a55c8f7f-edb7-474b-a634-b3f1abf9ea56/deploy-status)](https://app.netlify.com/sites/dreezys-tech-hive/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/25b0a3a2-aba0-4b1e-b84a-3442d8370a85/deploy-status)](https://app.netlify.com/sites/tcaaustin/deploys)
 ### 0. About This Project
 This project is a serverless website (written in Gatsby JS) for [our church (Travis Christian Assembly)](http://www.tcaweb.org/), this website contains but not limited to preaching content and church event advertisement.
 
