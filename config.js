@@ -14,8 +14,8 @@ siteMenuLinks[siteDisplayLang] = [
     items: media_categories.map(c => ({ name: c.lang[siteDisplayLang], link: `/media/${c.pageSubPath}` }))
   },
   {
-    name: '元素',
-    link: '/elements'
+    name: '每日灵粮',
+    link: '/daily-bread'
   },
   {
     name: '直播',
