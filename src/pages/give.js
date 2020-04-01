@@ -35,6 +35,7 @@ export default class Give extends React.Component {
               <p>
                 {language().giveDescriptionLine1}
                 <br/>
+                <br/>
                 {language().giveDescriptionLine2}
               </p>
 

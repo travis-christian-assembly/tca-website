@@ -2,9 +2,10 @@ import { getAudioUrl, getDayIndexByDate, renderScriptures } from 'components/Dai
 import { language } from 'components/Language'
 import Layout from 'components/layout'
 import Moment from 'moment'
+import Calendar from 'rc-calendar'
+import 'rc-calendar/assets/index.css'
+import enUS from 'rc-calendar/lib/locale/en_US'
 import React from 'react'
-import Calendar from 'react-calendar'
-import 'react-calendar/dist/Calendar.css'
 import AudioPlayer from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
 import Helmet from 'react-helmet'
@@ -75,7 +76,8 @@ class DailyBread extends React.Component {
                 <section id="sidebar">
                   <section>
                     <Calendar
-                      calendarType='US'
+                      locale={enUS}
+                      style={{ zIndex: 1001, width: '100%' }}
                       onChange={this.onChange}
                       value={this.state.date}
                     />
