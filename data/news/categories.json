@@ -1,0 +1,16 @@
+[
+  {
+    "id": "announcements",
+    "lang": {
+      "zh-Hans": "公告"
+    },
+    "pageSubPath": "announcements"
+  },
+  {
+    "id": "events",
+    "lang": {
+      "zh-Hans": "活动"
+    },
+    "pageSubPath": "events"
+  }
+]

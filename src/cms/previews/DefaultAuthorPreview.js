@@ -2,7 +2,7 @@ import { renderAll } from 'components/BibleVerses'
 import React from 'react'
 import showdown from 'showdown'
 
-const MediaAuthorPreview = ({ entry, fieldsMetaData, widgetFor }) => {
+const DefaultAuthorPreview = ({ entry, fieldsMetaData, widgetFor }) => {
   const rawMarkdownBody = entry.getIn(['data', 'body']) || ''
   const renderedBody = renderAll(rawMarkdownBody)
 
@@ -17,4 +17,4 @@ const MediaAuthorPreview = ({ entry, fieldsMetaData, widgetFor }) => {
   )
 }
 
-export default MediaAuthorPreview
+export default DefaultAuthorPreview
