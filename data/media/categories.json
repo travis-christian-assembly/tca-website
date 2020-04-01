@@ -33,5 +33,12 @@
       "zh-Hans": "退休会"
     },
     "pageSubPath": "retreats"
+  },
+  {
+    "id": "featured_sermons",
+    "lang": {
+      "zh-Hans": "布道精选"
+    },
+    "pageSubPath": "featured_sermons"
   }
 ]
