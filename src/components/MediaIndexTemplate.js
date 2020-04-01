@@ -1,4 +1,4 @@
-import { lang } from 'components/lang'
+import { language } from 'components/Language'
 import Layout from 'components/layout'
 import media_categories from 'data/media/categories.json'
 import { Link } from 'gatsby'
@@ -9,8 +9,6 @@ import config from 'root/config'
 
 export default class MediaIndexTemplate extends React.Component {
   render() {
-    const language = lang[config.siteDisplayLang]
-
     const nodes = this.props.edges
     nodes.sort(
       function(a, b) {
@@ -21,13 +19,13 @@ export default class MediaIndexTemplate extends React.Component {
     return (
       <Layout>
         <Helmet>
-          <title>{language.pageTitleMedia}</title>
+          <title>{language().pageTitleMedia}</title>
         </Helmet>
 
         <div id="main" className="wrapper style1">
           <div className="container">
             <header className="major">
-              <h2>{language.pageTitleMedia}{this.props.category === undefined ? '' : ` — ${this.props.category}`}</h2>
+              <h2>{language().pageTitleMedia}{this.props.category === undefined ? '' : ` — ${this.props.category}`}</h2>
             </header>
             <div className="row gtr-150">
               <div className="col-8 col-12-medium">
@@ -50,7 +48,7 @@ export default class MediaIndexTemplate extends React.Component {
               </div>
               <div className="col-4 col-12-medium">
                 <section id="sidebar">
-                  <h3>{language.pageHeaderMediaCategories}</h3>
+                  <h3>{language().pageHeaderMediaCategories}</h3>
                   <ul className="alt">
                     {
                       media_categories.map(

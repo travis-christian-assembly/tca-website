@@ -1,11 +1,9 @@
 import BgSchedule from 'assets/images/bg_schedule.jpg'
-import { lang } from 'components/lang'
+import { language } from 'components/Language'
 import UrlAwareLink from 'components/UrlAwareLink'
 import React from 'react'
 import Fade from 'react-reveal/Fade'
 import config from 'root/config'
-
-const language = lang[config.siteDisplayLang]
 
 const Schedule = props => (
   <section
@@ -19,19 +17,19 @@ const Schedule = props => (
     <Fade right big>
       <div className="content">
         <header>
-          <h2>{language.sundayScheduleHeader}</h2>
+          <h2>{language().sundayScheduleHeader}</h2>
         </header>
         <p>
-          {language.sundayScheduleTextLine1}<br/>
-          {language.sundayScheduleTextLine2}<br/>
-          {language.sundayScheduleTextLine3}<br/>
-          {language.sundayScheduleTextLine4}
+          {language().sundayScheduleTextLine1}<br/>
+          {language().sundayScheduleTextLine2}<br/>
+          {language().sundayScheduleTextLine3}<br/>
+          {language().sundayScheduleTextLine4}
         </p>
         <header>
-          <h2>{language.sundayLocationHeader}</h2>
+          <h2>{language().sundayLocationHeader}</h2>
         </header>
         <p>
-          {config.churchName}
+          {config.churchAddressName}
           <br/>
           <UrlAwareLink className="link depth-0" link={{ name: config.churchAddress, link: config.churchAddressMapLink}}/>
         </p>

@@ -1,5 +1,5 @@
 import { getAudioUrl, getDayIndexByDate, renderScriptures } from 'components/DailyBread'
-import { lang } from 'components/lang'
+import { language } from 'components/Language'
 import Layout from 'components/layout'
 import Moment from 'moment'
 import React from 'react'
@@ -22,8 +22,6 @@ class DailyBread extends React.Component {
   onChange = date => this.setState({ date })
 
   render() {
-    const language = lang[config.siteDisplayLang]
-
     const date = this.state.date
     const dayIndex = getDayIndexByDate(date)
 
@@ -31,7 +29,7 @@ class DailyBread extends React.Component {
     if (dayIndex === -1) {
       rendered = (
         <div>
-          <h3>{language.dailyBreadNoContent}</h3>
+          <h3>{language().dailyBreadNoContent}</h3>
         </div>
       )
     } else {
@@ -40,13 +38,13 @@ class DailyBread extends React.Component {
 
       rendered = (
         <div>
-          <h3>{language.dailyBreadHeaderAudio}</h3>
+          <h3>{language().dailyBreadHeaderAudio}</h3>
           <AudioPlayer
             src={audioUrl}
           />
           <br/>
           <br/>
-          <h3>{language.dailyBreadHeaderTodaysScripture}</h3>
+          <h3>{language().dailyBreadHeaderTodaysScripture}</h3>
           <div dangerouslySetInnerHTML={{ __html: new showdown.Converter().makeHtml(markdown) }}/>
         </div>
       )
@@ -55,14 +53,14 @@ class DailyBread extends React.Component {
     return (
       <Layout>
         <Helmet>
-          <title>{language.dailyBreadTitle}</title>
+          <title>{language().dailyBreadTitle}</title>
           <meta name="description" content="Daily Bread" />
         </Helmet>
 
         <div id="main" className="wrapper style1">
           <div className="container">
             <header className="major">
-              <h2>{language.dailyBreadTitle}</h2>
+              <h2>{language().dailyBreadTitle}</h2>
               <p>
                 {Moment(date).format('MM/DD/YYYY')}
               </p>

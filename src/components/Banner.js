@@ -1,17 +1,14 @@
-import { lang } from 'components/lang'
+import { language } from 'components/Language'
 import Slider from 'components/SlideShow'
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
-import config from 'root/config'
-
-const language = lang[config.siteDisplayLang]
 
 const Banner = props => (
   <section id="banner">
     <div className="content">
       <header>
-        <h2>{language.bannerHeader}</h2>
-        <p>{language.bannerText}</p>
+        <h2>{language().bannerHeader}</h2>
+        <p>{language().bannerText}</p>
       </header>
       <br/>
       <br/>

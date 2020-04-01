@@ -35,5 +35,23 @@
   "dailyBreadTitle": "每日灵粮",
   "dailyBreadHeaderAudio": "音频",
   "dailyBreadHeaderTodaysScripture": "今日经文",
-  "dailyBreadNoContent": "今天是四年一次的2月29日！给自己放一天假吧！"
+  "dailyBreadNoContent": "今天是四年一次的2月29日！给自己放一天假吧！",
+
+  "giveTitle": "奉献支持",
+  "giveDescriptionLine1": "传福的家人们平安：",
+  "giveDescriptionLine2": "为了方便和鼓励大家在疫情期间继续给教会奉献，继续支持神家的运作，经教会牧者和执事们的讨论，从即日起我们打开网上奉献的渠道，具体有以下三种办法：",
+  "giveOption1Title": "方法一：邮寄",
+  "giveOption1DescriptionLine1": "请把支票邮寄到教会。",
+  "giveOption1DescriptionLine2": "地址：传福基督徒聚会 8304 East Highway US-290, Austin, TX 78724",
+  "giveOption2Title": "方法二：Zelle 或 QuickPay",
+  "giveOption2DescriptionLine1": "如果有Wells Fargo, Chase Bank, Bank of America, Citi Bank等银行的账号，可以用此方法直接转帐至：chase@tcaweb.org",
+  "giveOption2BulletPoint1Description": "中文操作指南（点击查看）",
+  "giveOption2BulletPoint1Url": "https://www.uscreditcardguide.com/introduction-to-zelle/",
+  "giveOption2BulletPoint2Description": "支持 Zelle 或 QuickPay 服务的银行（点击查看）",
+  "giveOption2BulletPoint2Url": "https://www.zellepay.com/participating-banks-and-credit-unions",
+  "giveOption3Title": "方法三：PayPal",
+  "giveOption3DescriptionLine1": "使用PayPal转账至：chase@tcaweb.org",
+  "giveOption3BulletPoint1Description": "中文操作指南（点此查看）",
+  "giveOption3BulletPoint1Url": "https://www.paypal.com/c2/webapps/mpp/how-to-guides/how-to-use-paypal?locale.x=zh_C2",
+  "giveOption3BulletPoint2Description": "你也可以在PayPal账号里面连接信用卡，这样就可以直接用信用卡奉献。"
 }

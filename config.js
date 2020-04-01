@@ -18,6 +18,10 @@ siteMenuLinks[siteDisplayLang] = [
     link: '/daily-bread'
   },
   {
+    name: '奉献支持',
+    link: '/give'
+  },
+  {
     name: '直播',
     link: 'https://www.youtube.com/channel/UC3Qa1Q7VrghRxxeavIdF1gw/live',
     cl: 'button primary'
@@ -41,8 +45,8 @@ module.exports = {
   dailyBreadContentDomain: 'https://media-daily-bread.netlify.com/',
 
   // Church Info
-  churchName: 'Travis Christian Assembly',
   churchAddress: '8304 US-290, Austin, TX 78724',
+  churchAddressName: 'Travis Christian Assembly',
   churchAddressMapLink: 'https://goo.gl/maps/apCQZS7abKt4ba2g9',
 
   // Bible Display

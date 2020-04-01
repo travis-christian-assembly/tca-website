@@ -1,15 +1,12 @@
 import { renderAll } from 'components/BibleVerses'
-import { lang } from 'components/lang'
+import { language } from 'components/Language'
 import Layout from 'components/layout'
 import speakers from 'data/speakers.json'
 import { graphql } from 'gatsby'
+import _ from 'lodash'
 import React from 'react'
 import Helmet from 'react-helmet'
-import config from 'root/config'
-
-const language = lang[config.siteDisplayLang]
-const _ = require('lodash')
-const showdown = require('showdown')
+import showdown from 'showdown'
 
 export default function MediaTemplate({ data }) {
   const { media } = data
@@ -20,7 +17,7 @@ export default function MediaTemplate({ data }) {
 
   var renderedSpeakers = ''
   if (!_.isEmpty(frontmatter.speakers)) {
-    renderedSpeakers = `${language.speakerLinePrefix}${frontmatter.speakers.map(s => speakerMap[s]).join(language.speakerDelimiter)}`
+    renderedSpeakers = `${language().speakerLinePrefix}${frontmatter.speakers.map(s => speakerMap[s]).join(language().speakerDelimiter)}`
   }
 
   const renderedBody = renderAll(rawMarkdownBody)
