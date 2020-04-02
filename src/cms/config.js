@@ -24,7 +24,7 @@ export const netlifyCmsConfig = {
         folder: 'data/media',
         label: 'Media',
         name: 'media',
-        slug: '{{year}}{{month}}{{day}}{{hour}}{{minute}}_{{title}}',
+        slug: '{{year}}{{month}}{{day}}_{{title}}',
         fields: [
           {
             default: 'media',
@@ -74,7 +74,7 @@ export const netlifyCmsConfig = {
         folder: 'data/news',
         label: 'News',
         name: 'news',
-        slug: '{{year}}{{month}}{{day}}{{hour}}{{minute}}_{{title}}',
+        slug: '{{year}}{{month}}{{day}}_{{title}}',
         fields: [
           {
             default: 'news',

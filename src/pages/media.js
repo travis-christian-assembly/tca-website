@@ -25,6 +25,7 @@ export const query = graphql`
             title
             type
           }
+          id
         }
       }
     }

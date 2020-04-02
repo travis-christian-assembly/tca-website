@@ -7,12 +7,15 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import config from 'root/config'
 
+const categoryIdToTranslation = {}
+media_categories.forEach(e => categoryIdToTranslation[e.id] = e.lang[config.siteDisplayLang])
+
 export default class MediaIndexTemplate extends React.Component {
   render() {
     const nodes = this.props.edges
     nodes.sort(
       function(a, b) {
-        return Date.parse(b.node.frontmatter.date) - Date.parse(a.node.frontmatter.date);
+        return toEpoch(b.node.frontmatter.date) - toEpoch(a.node.frontmatter.date)
       }
     )
 
@@ -25,7 +28,7 @@ export default class MediaIndexTemplate extends React.Component {
         <div id="main" className="wrapper style1">
           <div className="container">
             <header className="major">
-              <h2>{language().pageTitleMedia}{this.props.category === undefined ? '' : ` — ${this.props.category}`}</h2>
+              <h2>{language().pageTitleMedia}{this.props.category === undefined ? '' : ` — ${categoryIdToTranslation[this.props.category]}`}</h2>
             </header>
             <div className="row gtr-150">
               <div className="col-8 col-12-medium">
@@ -71,12 +74,13 @@ export default class MediaIndexTemplate extends React.Component {
   }
 }
 
+function toEpoch(frontmatterDate) {
+  return Moment(frontmatterDate, 'YYYYMMDD')
+}
+
 function getTranslatedSortedCategories(categories) {
   const copy = categories
   copy.sort()
-
-  const categoryIdToTranslation = {}
-  media_categories.forEach(e => categoryIdToTranslation[e.id] = e.lang[config.siteDisplayLang])
 
   return copy.map(c => categoryIdToTranslation[c]).join(' / ')
 }
