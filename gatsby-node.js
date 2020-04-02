@@ -1,3 +1,4 @@
+const config = require('./config')
 const path = require('path')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {

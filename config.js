@@ -36,6 +36,8 @@ module.exports = {
   siteDescription: '传福基督徒聚会',
   siteDisplayLang: siteDisplayLang,
   siteMenuLinks: siteMenuLinks,
+  siteMaxPageSize: 10,
+  siteMaxPageNavRange: 5,  // Maximum number of pages to display for page navigation.
 
   // CMS
   cmsSiteTitle: 'Content Management System - Travis Christian Assembly',

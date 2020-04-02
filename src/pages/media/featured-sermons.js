@@ -1,14 +1,16 @@
+import { getPageNumber } from 'components/Pagination'
 import { graphql } from 'gatsby'
 import React from 'react'
-import MediaIndexTemplate from 'components/MediaIndexTemplate'
+import MediaIndexTemplate from 'templates/MediaIndexTemplate'
 
 const MediaFeaturedSermonsIndex = ({
   data: {
     allMarkdownRemark: { edges }
-  }
+  },
+  location
 }) => {
   return (
-    <MediaIndexTemplate category='featured_sermons' edges={edges} />
+    <MediaIndexTemplate category='featured_sermons' edges={edges} page={getPageNumber(location)}/>
   )
 }
 

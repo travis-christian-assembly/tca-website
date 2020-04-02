@@ -1,14 +1,16 @@
-import MediaIndexTemplate from 'components/MediaIndexTemplate'
+import { getPageNumber } from 'components/Pagination'
+import MediaIndexTemplate from 'templates/MediaIndexTemplate'
 import { graphql } from 'gatsby'
 import React from 'react'
 
 const MediaIndex = ({
   data: {
     allMarkdownRemark: { edges }
-  }
+  },
+  location
 }) => {
   return (
-    <MediaIndexTemplate edges={edges} />
+    <MediaIndexTemplate edges={edges} page={getPageNumber(location)}/>
   )
 }
 
