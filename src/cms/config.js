@@ -37,8 +37,8 @@ export const netlifyCmsConfig = {
             name: 'title'
           },
           {
-            dateFormat: 'MM/DD/YYYY',
-            format: 'YYYYMMDD',
+            dateFormat: config.cmsDataFormatDateDisplay,
+            format: config.cmsDataFormatDatePersistence,
             label: 'Event Date',
             name: 'date',
             timeFormat: false,
@@ -87,8 +87,8 @@ export const netlifyCmsConfig = {
             name: 'title'
           },
           {
-            dateFormat: 'MM/DD/YYYY',
-            format: 'YYYYMMDD',
+            dateFormat: config.cmsDataFormatDateDisplay,
+            format: config.cmsDataFormatDatePersistence,
             label: 'News Date',
             name: 'date',
             timeFormat: false,

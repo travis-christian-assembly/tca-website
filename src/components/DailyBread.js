@@ -2,7 +2,19 @@ import audioIndex from 'assets/daily-bread/audio_index.json'
 import scriptureIndex from 'assets/daily-bread/scriptures.json'
 import { renderAll } from 'components/BibleVerses'
 import Moment from 'moment'
+import config from 'root/config'
 
+/**
+ * Given a date, return the index (as for which day in a 365-day year) of the desired Daily Bread entry.
+ *
+ * Notes:
+ *   * The returned index starts from 0.
+ *   * There are exactly 365 entries of Daily Bread. For a year with 366 days, when the specified date is Februrary 29th, the returned result is -1.
+ *
+ * @param {Date} date A Date instance.
+ * @returns {number} The index (as for which day in a 365-day year) of the desired Daily Bread entry. The returned index starts from 0, and will be -1 if the
+ *                   specified date is Februrary 29th.
+ */
 export function getDayIndexByDate(date) {
   const moment = Moment(date)
   const monthOfYear = moment.month()
@@ -20,10 +32,11 @@ export function getDayIndexByDate(date) {
   return normalizedDayOfYear
 }
 
-/*
-  'dayIndex' specifies which day of the year it is, for rendering the scriptures for Daily Bread.
-
-  Note: 'dayIndex' starts from 0.
+/**
+ * Return the scripture in Markdown for the specified day in a 365-day year.
+ *
+ * @param {number} dayIndex The index (as for which day in a 365-day year) of the desired Daily Bread entry.
+ * @returns {String} Scripture (in Markdown) for the specified day.
 */
 export function renderScriptures(dayIndex) {
   const scriptures = scriptureIndex['by_day'][dayIndex]
@@ -41,6 +54,12 @@ export function renderScriptures(dayIndex) {
   return result
 }
 
+/**
+ * Return the URL to the audio file for the specified day in a 365-day year.
+ *
+ * @param {number} dayIndex The index (as for which day in a 365-day year) of the desired Daily Bread entry.
+ * @returns {String} URL to the audio file for the specified day.
+ */
 export function getAudioUrl(dayIndex) {
-  return audioIndex['by_day'][dayIndex]
+  return `${config.dailyBreadContentDomain}${audioIndex['by_day'][dayIndex]}`
 }

@@ -65,7 +65,5 @@ export function calculatePageNumbersForNav(currentPageNumber, lastPageNumber) {
   result = hasReachedFirst ? result : _.concat('First', 'Previous', result)  // Indicate to render a go-to-first and a go-to-previous.
   result = hasReachedLast ? result : _.concat(result, 'Next', 'Last')  // // Indicate to render a go-to-next and a go-to-last.
 
-  console.log(result);
-
   return result
 }

@@ -43,13 +43,15 @@ export default class MediaIndexTemplate extends React.Component {
                   <ul className="alt">
                     {
                       nodesOnCurrentPage.map(
-                        n => <li key={n.node.id}>
-                          {this.props.category === undefined ? `${getTranslatedSortedCategories(n.node.frontmatter.categories)} — ` : ''}{Moment(n.node.frontmatter.date, 'YYYYMMDD').format('MM/DD/YYYY')}
-                          <br/>
+                        n => (
+                          <li key={n.node.id}>
+                            {toEntryHeader(this.props.category, n)}
+                            <br/>
                             <Link to={`/media/${n.node.frontmatter.date}_${n.node.frontmatter.title}`}>
                               {n.node.frontmatter.title}
                             </Link>
-                        </li>
+                          </li>
+                        )
                       )
                     }
                     <li></li>  {/* Render the line separator for the last item in the list */}
@@ -128,6 +130,14 @@ export default class MediaIndexTemplate extends React.Component {
       </Layout>
     )
   }
+}
+
+function toEntryHeader(category, node) {
+  // Remove the categories from the header display if a category is specified, keep them otherwise, e.g. entries on /media/sermons will not have categories
+  // displayed but entries on /media will.
+  const prefix = category === undefined ? `${getTranslatedSortedCategories(node.node.frontmatter.categories)} — ` : ''
+  const date = Moment(node.node.frontmatter.date, config.cmsDataFormatDatePersistence).format(config.cmsDataFormatDateDisplay)
+  return `${prefix}${date}`
 }
 
 function toEpoch(frontmatterDate) {

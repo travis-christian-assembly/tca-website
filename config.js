@@ -40,8 +40,10 @@ module.exports = {
   siteMaxPageNavRange: 5,  // Maximum number of pages to display for page navigation.
 
   // CMS
-  cmsSiteTitle: 'Content Management System - Travis Christian Assembly',
   cmsBackendGitHubRepo: 'travis-christian-assembly/tca-website',
+  cmsSiteTitle: 'Content Management System - Travis Christian Assembly',
+  cmsDataFormatDateDisplay: 'MM/DD/YYYY',  // Date format for display
+  cmsDataFormatDatePersistence: 'YYYYMMDD',  // Date format for data persistence, e.g. CMS-managed Markdown files
 
   // Content
   dailyBreadContentDomain: 'https://media-daily-bread.netlify.com/',

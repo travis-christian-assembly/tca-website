@@ -34,7 +34,7 @@ class DailyBread extends React.Component {
         </div>
       )
     } else {
-      const audioUrl = `${config.dailyBreadContentDomain}${getAudioUrl(dayIndex)}`
+      const audioUrl = getAudioUrl(dayIndex)
       const markdown = renderScriptures(dayIndex)
 
       rendered = (
@@ -63,7 +63,7 @@ class DailyBread extends React.Component {
             <header className="major">
               <h2>{language().dailyBreadTitle}</h2>
               <p>
-                {Moment(date).format('MM/DD/YYYY')}
+                {Moment(date).format(config.cmsDataFormatDateDisplay)}
               </p>
             </header>
             <div className="row gtr-150">
