@@ -1,8 +1,6 @@
 import { bibleIndex, bibleVerses, nonConsecutiveBibleVersesDisplayText } from 'components/bible'
 import config from 'root/config'
 
-const _ = require('lodash')
-
 const dataLang = config.bibleDataLang
 const displayLang = config.bibleDisplayLang
 const displayVersion = config.bibleDisplayVersion
@@ -12,8 +10,50 @@ Object.keys(bibleIndex[dataLang]).forEach(
   id => bookEngNameToId[bibleIndex[dataLang][id]] = id
 )
 
+/**
+ * Return text that has verses which follow the inline-style specification within a single line. It supports multiple inline-style verses specified at different
+ * locations within the line.
+ *
+ * @param {String} line A line of text that is to be rendered with inlined verses. The verse specification must follow this regex pattern: /bible_verses book='([a-zA-Z1-3 ]*)', chapter='([\d,-]*)', verses='([\d,-]*)'/.
+ * @returns {String} A line of text with inlined verses rendered.
+ */
+export function renderInlineBibleVerses(line) {
+  const regex = /bible_verses book='([a-zA-Z1-3 ]*)', chapter='([\d,-]*)', verses='([\d,-]*)'/
+  var result = ''
+
+  line.split(config.bibleInlineVerseSeparator)
+    .forEach(
+      split => {
+        const match = split.match(regex)
+
+        if (match) {
+          const book = match[1]
+          const chapter = match[2]
+          const verseScope = match[3]
+
+          const translatedBookName = bibleIndex[displayLang][bookEngNameToId[book]]
+          const verseIds = validateAndCalculateVerseIds(bookEngNameToId[book], chapter, verseScope)
+          const versesInMarkdown = getVersesByIds(bookEngNameToId[book], chapter, verseIds)
+
+          result += `<span style='color:${config.bibleInlineVerseDisplayColor}'>*${versesInMarkdown}（${translatedBookName} ${chapter}: ${verseScope}）*</span>`
+        } else {
+          result += split
+        }
+      }
+    )
+
+  return result
+}
+
+/**
+ * Return text that has verses which follow the inline-style specification within a single line. It supports multiple inline-style verses specified at different
+ * locations within the line.
+ *
+ * @param {String} line A line of text that is to be rendered as a standalone block of verses. The verse specification must follow this regex pattern: /^\$bible_verses book='([a-zA-Z1-3 ]*)', chapter='([\d,-]*)', verses='([\d,-]*)'\$$/.
+ * @returns {String} A line of text with inlined verses rendered.
+ */
 export function renderBibleVerses(line) {
-  const match = line.match(/^\$bible_verses book='(.*)', chapter='(.*)', verses='(.*)'\$$/)
+  const match = line.match(/^\$bible_verses book='([a-zA-Z1-3 ]*)', chapter='([\d,-]*)', verses='([\d,-]*)'\$$/)
   var result = line
 
   if (match) {
@@ -35,8 +75,17 @@ export function renderBibleVerses(line) {
   return result
 }
 
+/**
+ * Return text that has both inline-style verses and block-style verses rendered.
+ *
+ * @param {String} body Multiple lines (separated by '\n') of text with muultiple inline-style/block-style verse specifications.
+ * @returns {String} Multiple lines (separated by '\n') with verses rendered.
+ */
 export function renderAll(body) {
-  return _.map(body.split('\n'), renderBibleVerses).join('\n')
+  return body.split('\n')
+    .map(e => renderBibleVerses(e))
+    .map(e => renderInlineBibleVerses(e))
+    .join('\n')
 }
 
 /*

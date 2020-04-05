@@ -56,5 +56,7 @@ module.exports = {
   // Bible Display
   bibleDataLang: 'en',  // Use Engligh in raw data for referencing bible verses, e.g. in Markdown pages
   bibleDisplayLang: `${siteDisplayLang}`,
-  bibleDisplayVersion: 'NCV'
+  bibleDisplayVersion: 'NCV',
+  bibleInlineVerseDisplayColor: 'red',
+  bibleInlineVerseSeparator: '%%%'
 }

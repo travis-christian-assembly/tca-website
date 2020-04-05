@@ -90,6 +90,13 @@ export default class MediaIndexTemplate extends React.Component {
                             <strong className="fa-stack-1x"><i className="fa fa-angle-double-right"></i></strong>
                           </a>
                         )
+                      } else if (p === page) {
+                        return (
+                          <div key={p} className="fa-stack">
+                            <span className="far fa-square fa-stack-2x"></span>
+                            <strong className="fa-stack-1x">{p}</strong>
+                          </div>
+                        )
                       } else {
                         return (
                           <a key={p} href={`?page=${p}`} className="fa-stack">

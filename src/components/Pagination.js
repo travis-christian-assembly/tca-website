@@ -53,7 +53,7 @@ export function calculateSinglePageFromAll(elements, pageNumber) {
  *                  'Previous'), go-to-next (as 'Next'), go-to-first (as 'First') and go-to-last (as 'Last').
  */
 export function calculatePageNumbersForNav(currentPageNumber, lastPageNumber) {
-  const guessedStart = currentPageNumber - config.siteMaxPageNavRange / 2
+  const guessedStart = currentPageNumber - Math.ceil(config.siteMaxPageNavRange / 2)
   const hasReachedFirst = guessedStart <= 1
   const realStart = hasReachedFirst ? 1 : guessedStart
 
