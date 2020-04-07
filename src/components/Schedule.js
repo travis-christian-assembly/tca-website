@@ -25,14 +25,14 @@ const Schedule = props => (
           {language().sundayScheduleTextLine3}<br/>
           {language().sundayScheduleTextLine4}
         </p>
+
+        <br/>
+
         <header>
           <h2>{language().sundayLocationHeader}</h2>
         </header>
-        <p>
-          {config.churchAddressName}
-          <br/>
-          <UrlAwareLink className="link depth-0" link={{ name: config.churchAddress, link: config.churchAddressMapLink}}/>
-        </p>
+        {config.churchAddressName}
+        <UrlAwareLink className="link depth-0" link={{ name: config.churchAddress, link: config.churchAddressMapLink}}/>
       </div>
     </Fade>
   </section>

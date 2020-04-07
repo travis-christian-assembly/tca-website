@@ -54,26 +54,23 @@ export default class Give extends React.Component {
               <h4>{language().giveOption2Title}</h4>
               <p>
                 {language().giveOption2DescriptionLine1}
-                <br/>
-                <br/>
-                <ul>
-                  <li><a href={language().giveOption2BulletPoint1Url}>{language().giveOption2BulletPoint1Description}</a></li>
-                  <li><a href={language().giveOption2BulletPoint2Url}>{language().giveOption2BulletPoint2Description}</a></li>
-                </ul>
               </p>
+              <ul>
+                <li><a href={language().giveOption2BulletPoint1Url}>{language().giveOption2BulletPoint1Description}</a></li>
+                <li><a href={language().giveOption2BulletPoint2Url}>{language().giveOption2BulletPoint2Description}</a></li>
+              </ul>
+
 
               <hr/>
 
               <h4>{language().giveOption3Title}</h4>
               <p>
                 {language().giveOption3DescriptionLine1}
-                <br/>
-                <br/>
-                <ul>
-                  <li><a href={language().giveOption3BulletPoint1Url}>{language().giveOption3BulletPoint1Description}</a></li>
-                  <li>{language().giveOption3BulletPoint2Description}</li>
-                </ul>
               </p>
+              <ul>
+                <li><a href={language().giveOption3BulletPoint1Url}>{language().giveOption3BulletPoint1Description}</a></li>
+                <li>{language().giveOption3BulletPoint2Description}</li>
+              </ul>
 
               <hr/>
             </section>
