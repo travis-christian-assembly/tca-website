@@ -5,7 +5,8 @@ module.exports = {
   },
   bibleVerses: {
     'zh-Hans': {
-      'NCV': require('assets/bible/verses/zh-Hans/ncv/data.json')
+      'CUVS': require('assets/bible/verses/zh-Hans/cuvs/data.json'),
+      'NCVS': require('assets/bible/verses/zh-Hans/ncvs/data.json')
     }
   },
   nonConsecutiveBibleVersesDisplayText: {
