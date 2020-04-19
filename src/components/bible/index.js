@@ -1,14 +1,14 @@
 module.exports = {
   bibleIndex: {
     'en': require('assets/bible/index/en.json'),
-    'zh-Hans': require('assets/bible/index/zh-Hans.json'),
+    'zh-Hant': require('assets/bible/index/zh-Hant.json')
   },
   bibleVerses: {
-    'zh-Hans': {
-      'CUVS': require('assets/bible/verses/zh-Hans/cuvs/data.json')
+    'zh-Hant': {
+      'CUV': require('assets/bible/verses/zh-Hant/cuv/data.json')
     }
   },
   nonConsecutiveBibleVersesDisplayText: {
-    'zh-Hans': '（部分经文省略）'
+    'zh-Hant': '（部分經文省略）'
   }
 }

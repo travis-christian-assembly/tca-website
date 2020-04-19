@@ -84,6 +84,6 @@ Edit the JSON file at `/data/speakers.json`, following the existing entry patter
 
 ### 6. Copyright
 Bible versions used in this project:
-* [Chinese CUV (Simplified)](https://unbound.biola.edu/index.cfm?method=downloads.showDownloadMain)
+* [Chinese CUV (Traditional)](https://unbound.biola.edu/index.cfm?method=downloads.showDownloadMain)
 
 **Biblical text used in this project is gathered from Biola University, and to our knowledge, is in the Public Domain. If this is in violation of copyrights, please contact us and we will remove it from our project.**
