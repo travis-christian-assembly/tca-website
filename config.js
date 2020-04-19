@@ -22,6 +22,10 @@ siteMenuLinks[siteDisplayLang] = [
     link: '/give'
   },
   {
+    name: '单张',
+    link: '/program-sheet'
+  },
+  {
     name: '直播',
     link: 'https://www.youtube.com/channel/UC3Qa1Q7VrghRxxeavIdF1gw/live',
     cl: 'button primary'

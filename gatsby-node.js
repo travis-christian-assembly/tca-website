@@ -40,6 +40,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         // Speaker nodes do not have corresponding pages to be created
         shouldProcessNode = false
         break
+      case 'programSheet':
+        pagePath = 'program-sheet'
+        shouldProcessNode = true
+        break
       default:
         throw `Unrecognized Markdown node type: ${node.frontmatter.type}`
     }
@@ -64,6 +68,8 @@ function getTemplateByType(type) {
   switch (type) {
     case 'media':
       return path.resolve('src/templates/MediaPageTemplate.js')
+    case 'programSheet':
+      return path.resolve('src/templates/ProgramSheetTemplate.js')
     default:
       throw `Unrecognized template type: ${type}`
   }

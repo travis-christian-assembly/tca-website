@@ -14,7 +14,6 @@ export default class Give extends React.Component {
       <Layout>
         <Helmet>
           <title>{language().giveTitle}</title>
-          <meta name="description" content="Right Sidebar Page" />
         </Helmet>
 
         <div id="main" className="wrapper style1">

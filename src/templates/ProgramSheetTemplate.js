@@ -6,9 +6,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import showdown from 'showdown'
 
-export default function MediaTemplate({ data }) {
-  const { media } = data
-  const { frontmatter, rawMarkdownBody } = media
+export default function ProgramSheetTemplate({ data }) {
+  const { programSheet } = data
+  const { frontmatter, rawMarkdownBody } = programSheet
 
   const renderedSpeakers = renderSpeakers(frontmatter.speakers)
   const renderedBody = renderAll(rawMarkdownBody)
@@ -38,7 +38,7 @@ export default function MediaTemplate({ data }) {
 
 export const query = graphql`
   query ($id: String!) {
-    media: markdownRemark(id: {eq: $id}) {
+    programSheet: markdownRemark(id: {eq: $id}) {
       frontmatter {
         date(formatString: "MM/DD/YYYY")
         speakers

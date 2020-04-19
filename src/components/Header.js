@@ -219,7 +219,7 @@ class Header extends React.Component {
                                   display: `block`,
                                 }}
                               >
-                                <Link to={sublink.link}>{sublink.name}</Link>
+                                <UrlAwareLink link={sublink}/>
                               </li>
                             )
                           )}
