@@ -109,6 +109,48 @@ export const netlifyCmsConfig = {
             widget: 'markdown'
           }
         ]
+      },
+      {
+        // Disabling 'create' and 'delete' to always maintain exactly one entry.
+        create: false,
+        delete: false,
+        folder: 'data/program-sheet',
+        label: 'Program Sheet',
+        name: 'programSheet',
+        fields: [
+          {
+            default: 'programSheet',
+            label: 'Type',
+            name: 'type',
+            widget: 'hidden'
+          },
+          {
+            label: 'Title',
+            name: 'title'
+          },
+          {
+            dateFormat: config.cmsDataFormatDateDisplay,
+            format: config.cmsDataFormatDatePersistence,
+            label: 'Program Date',
+            name: 'date',
+            timeFormat: false,
+            widget: 'datetime'
+          },
+          {
+            hint: '* Supports multiple selections',
+            label: 'Speakers',
+            min: 1,
+            multiple: true,
+            name: 'speakers',
+            options: speakerOptions,
+            widget: 'select'
+          },
+          {
+            label: 'Body',
+            name: 'body',
+            widget: 'markdown'
+          }
+        ]
       }
     ]
   }
