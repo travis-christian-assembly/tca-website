@@ -53,5 +53,96 @@
   "giveOption3DescriptionLine1": "使用PayPal转账至：chase@tcaweb.org",
   "giveOption3BulletPoint1Description": "中文操作指南（点此查看）",
   "giveOption3BulletPoint1Url": "https://www.paypal.com/c2/webapps/mpp/how-to-guides/how-to-use-paypal?locale.x=zh_C2",
-  "giveOption3BulletPoint2Description": "你也可以在PayPal账号里面连接信用卡，这样就可以直接用信用卡奉献。"
+  "giveOption3BulletPoint2Description": "你也可以在PayPal账号里面连接信用卡，这样就可以直接用信用卡奉献。",
+
+  "aboutUsTitle": "关于我们",
+  "aboutUsPasterIntroTitle": "牧者介绍",
+  "aboutUsPasterIntroSeniorPasterTitle": "主任牧师：陈瑞曾",
+  "aboutUsPasterIntroSeniorPasterDescription": "陈瑞曾牧师16岁重生得救，1980年国立清华大学毕业，1982年前来美国求学，1988年获加州大学电机博士，1988-1992年在落杉矶门徒之家接受传道人及牧者培训，1992年应聘于德州大学奥斯汀分校电机系和微电子研究中心，现为Chair Professor，并主持多项大型跨校研究计划，于1999、2000及2003分别获选为美国光学协会，国际光电学会和IEEE院士。陈瑞曾牧师1993年开创建立了传福基督徒聚会，至今一直带职服事。目前陈瑞曾夫妇一起负责牧会、传福音、信徒培训及国度事奉。陈牧师在北美基督徒及世界各地当中常受邀做福音聚会及信徒培训的讲员。",
+  "aboutUsPasterIntroSeniorPasterContactText": "陈牧师联系方式：",
+  "aboutUsPasterIntroChinesePasterTitle": "中文部牧师：吕小红",
+  "aboutUsPasterIntroChinesePasterDescription": "毕业于西安交通大学经济学院金融专业硕士研究生，1989年6月4日受洗归主，2003年毕业于新加坡东亚神学院，圣经研究专业。吕牧师全职牧会多年，长期从事校园福音、国度宣教和同工培训的工作。",
+  "aboutUsPasterIntroChinesePasterContactText": "吕牧师联系方式：",
+  "aboutUsPasterIntroEnglishPasterTitle": "English Pastors: Jon & Tanya Dorris",
+  "aboutUsPasterIntroEnglishPasterDescription": "Jon & Tanya are co-founders of YWAM Austin. They are bringing YWAM’s best mission training to TCA. YWAM (Youth With A Mission) is one of the largest mission organizations in the world, with over 2000 operating locations in 191 nations. The Dorris’ YWAM Austin is one of them. Jon & Tanya have 4 children and 3 grandchildren. They have been with YWAM since 1999 and have been conducting mission efforts primarily in the Asian area (and Austin city-reaching efforts). Before YWAM, they were leaders with the largest marriage ministry in the world for 7 years. Jon & Tanya are both ordained, licensed ministers, and have led some form of ministry since 1985.",
+
+  "fellowshipTitle": "团契",
+  "fellowshipFamilyFellowshipTitle": "家庭团契",
+  "fellowshipCampusFellowshipTitle": "校园团契",
+  "fellowshipTimeText": "时间：",
+  "fellowshipLocationText": "地点：",
+  "fellowshipLeadersText": "负责人：",
+  "fellowshipLeadersDelimiter": "、",
+  "fellowshipGroups": {
+    "familyFellowship": {
+      "southernGroupOne": {
+        "name": "南区一组",
+        "time": "周五（每周）晚上7:30 ~ 9:30",
+        "location": "TCA教会",
+        "leaders": [
+          { "name": "卢振宇", "email": "" },
+          { "name": "陈德斌", "email": "debinc@yahoo.com" }
+        ]
+      },
+      "southernGroupTwo": {
+        "name": "南区二组",
+        "time": "周五（每周）晚上7:30 ~ 9:30",
+        "location": "TCA教会",
+        "leaders": [
+          { "name": "许海峰", "email": "hfxuz@yahoo.com" }
+        ]
+      },
+      "northernGroupOne": {
+        "name": "北区一组",
+        "time": "周六（每两周一次）",
+        "location": "家庭",
+        "leaders": [
+          { "name": "林师武", "email": "swlin48@yahoo.com" }
+        ]
+      },
+      "northernGroupTwo": {
+        "name": "北区二组",
+        "time": "周五（每周）晚上7:30 ~ 9:30",
+        "location": "TCA教会",
+        "leaders": [
+          { "name": "关新力", "email": "charleyster@gmail.com" }
+        ]
+      },
+      "northernGroupThree": {
+        "name": "北区三组",
+        "time": "周五（每周）晚上7:30 ~ 9:30",
+        "location": "TCA教会",
+        "leaders": [
+          { "name": "余拔章", "email": "bazhyu@yahoo.com" },
+          { "name": "田园", "email": "Sylvia.Tien@dell.com" }
+        ]
+      }
+    },
+    "campusFellowship": {
+      "undergraduateGroup": {
+        "name": "本科生组",
+        "time": "周五（每周）晚上6:45 ~ 9:30",
+        "location": "UT校园SAC 2.120",
+        "leaders": [
+          { "name": "杨岑莹", "email": "ycy_tracy@utexas.edu" }
+        ]
+      },
+      "graduateGroup": {
+        "name": "硕博生组",
+        "time": "周五（每周）晚上6:45 ~ 9:30",
+        "location": "UT校园SAC 2.120",
+        "leaders": [
+          { "name": "杨岑莹", "email": "ycy_tracy@utexas.edu" }
+        ]
+      },
+      "youngProfessionalGroup": {
+        "name": "职青组",
+        "time": "周五（每周）晚上6:45 ~ 9:30",
+        "location": "UT校园SAC 2.120",
+        "leaders": [
+          { "name": "郭晓玲", "email": "guo0504@gmail.com" }
+        ]
+      }
+    }
+  }
 }

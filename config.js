@@ -9,6 +9,10 @@ siteMenuLinks[siteDisplayLang] = [
     link: '/'
   },
   {
+    name: '关于我们',
+    link: '/about-us'
+  },
+  {
     name: '影音资料',
     link: '/media',
     items: media_categories.map(c => ({ name: c.lang[siteDisplayLang], link: `/media/${c.pageSubPath}` }))
@@ -16,6 +20,10 @@ siteMenuLinks[siteDisplayLang] = [
   {
     name: '每日灵粮',
     link: '/daily-bread'
+  },
+  {
+    name: '团契',
+    link: '/fellowship'
   },
   {
     name: '奉献支持',

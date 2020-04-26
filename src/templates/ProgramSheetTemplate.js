@@ -28,7 +28,7 @@ export default function ProgramSheetTemplate({ data }) {
           </header>
 
           <section id="content">
-            <div dangerouslySetInnerHTML={{ __html: new showdown.Converter().makeHtml(renderedBody) }}/>
+            <div dangerouslySetInnerHTML={{ __html: new showdown.Converter({ tables: true }).makeHtml(renderedBody) }}/>
           </section>
         </div>
       </div>
