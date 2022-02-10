@@ -22,7 +22,7 @@
     "moment": "^2.24.0",
     "netlify-cms-app": "^2.12.2",
     "node-fetch": "^2.6.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "query-string": "^6.11.1",
     "rc-calendar": "^9.15.10",
     "react": "^16.13.1",
